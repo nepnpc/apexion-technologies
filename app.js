@@ -206,7 +206,7 @@
   if (!carousel) return;
   var track = carousel.querySelector('.qc-track');
   var dots = carousel.querySelectorAll('.qc-dot');
-  var bgs = ['#0c1b18', '#0f172a'];
+  var bgs = ['#0c1b18', '#0c1b18'];
   var cur = 0, timer;
 
   function go(n) {
