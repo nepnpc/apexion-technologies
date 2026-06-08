@@ -198,3 +198,41 @@
   input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();handle(input.value);}});
   document.querySelectorAll('.ch-chip').forEach(function(c){c.addEventListener('click',function(){handle(c.dataset.msg);});});
 })();
+
+
+// ===== QUOTE CAROUSEL =====
+(function () {
+  var carousel = document.getElementById('quote-carousel');
+  if (!carousel) return;
+  var track = carousel.querySelector('.qc-track');
+  var dots = carousel.querySelectorAll('.qc-dot');
+  var bgs = ['#0c1b18', '#0f172a'];
+  var cur = 0, timer;
+
+  function go(n) {
+    cur = n;
+    track.style.transform = 'translateX(-' + (100 * n) + '%)';
+    carousel.style.background = bgs[n];
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === n);
+    });
+  }
+
+  function next() { go((cur + 1) % dots.length); }
+
+  function reset() { clearInterval(timer); timer = setInterval(next, 5000); }
+
+  dots.forEach(function (d, i) {
+    d.addEventListener('click', function () { go(i); reset(); });
+  });
+
+  // touch/swipe support
+  var sx = 0;
+  track.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) { go(dx < 0 ? (cur + 1) % dots.length : (cur - 1 + dots.length) % dots.length); reset(); }
+  }, { passive: true });
+
+  reset();
+})();
