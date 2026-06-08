@@ -158,13 +158,13 @@ section.block { padding: 6rem 0; }
 /* ===== FOUNDER QUOTE ===== */
 /* ===== QUOTE CAROUSEL ===== */
 .quote-band { position: relative; overflow: hidden; color: #fff; text-align: center; transition: background .7s ease; background: #0c1b18; }
-.qc-track { display: flex; transition: transform .65s cubic-bezier(.4,0,.2,1); will-change: transform; }
-.qc-slide { min-width: 100%; padding: 6rem 0 4.5rem; box-sizing: border-box; }
-.quote-inner { max-width: 780px; margin: 0 auto; }
+.qc-track { display: flex; align-items: stretch; transition: transform .65s cubic-bezier(.4,0,.2,1); will-change: transform; }
+.qc-slide { min-width: 100%; padding: 6rem 0 4.5rem; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
+.quote-inner { max-width: 780px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; flex: 1; }
 .qmark { font-family: Georgia, 'Times New Roman', serif; font-size: 5rem; line-height: .4; color: var(--amber); display: block; margin-bottom: 1.2rem; }
 .quote-band blockquote { font-size: clamp(1.4rem, 3.2vw, 2.2rem); font-weight: 700; line-height: 1.38; letter-spacing: -.02em; color: #fff; }
 .quote-band blockquote .g { color: #34d399; }
-.q-author { display: inline-flex; align-items: center; gap: .9rem; margin-top: 2.2rem; }
+.q-author { display: inline-flex; align-items: center; gap: .9rem; margin-top: auto; padding-top: 2.2rem; }
 .q-av { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: #0f766e; box-shadow: 0 0 0 2px rgba(52,211,153,.5), 0 8px 20px rgba(0,0,0,.35); }
 .q-author .who { text-align: left; }
 .q-author b { display: block; color: #fff; font-size: 1rem; }
