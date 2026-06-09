@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apexion Technologies | We bring ideas to life | IT Solutions, Kathmandu</title>
-<meta name="description" content="Apexion Technologies is a Kathmandu IT solutions studio. Websites, custom software, automation and AI for Nepali businesses. Fixed quotes, on-time delivery, real support.">
+<title>IT Solutions Nepal | Web Development, SEO &amp; Digital Marketing | Apexion Technologies Kathmandu</title>
+<meta name="description" content="Top IT solutions company in Kathmandu, Nepal. Professional web development, SEO, digital marketing, automation and AI for Nepali businesses. Fixed quotes, reply in 24h.">
 <meta name="theme-color" content="#2563eb">
 <!-- NOTE: replace https://apexiontechnologies.vercel.app with your real domain once live (Open Graph needs absolute URLs). -->
 <link rel="canonical" href="https://apexiontechnologies.vercel.app/">
@@ -31,26 +31,86 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Apexion Technologies",
-  "description": "IT solutions studio in Kathmandu, Nepal. Websites, custom software, SEO, digital ads, automation and AI for Nepali businesses.",
-  "url": "https://apexiontechnologies.vercel.app/",
-  "telephone": "+977-9703901454",
-  "email": "hello@apexion.com.np",
-  "foundingDate": "2026",
-  "founder": { "@type": "Person", "name": "Subarna Katwal" },
-  "address": { "@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP" },
-  "areaServed": "NP",
-  "priceRange": "NPR",
-  "sameAs": [],
-  "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Google Business" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Ads" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automation & AI" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud, Hosting & Support" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hotel Solutions" } }
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://apexiontechnologies.vercel.app/#business",
+      "name": "Apexion Technologies",
+      "description": "IT solutions company in Kathmandu, Nepal. Web development, custom software, SEO, digital marketing, automation and AI for Nepali businesses.",
+      "url": "https://apexiontechnologies.vercel.app/",
+      "telephone": "+977-9703901454",
+      "email": "hello@apexion.com.np",
+      "foundingDate": "2026",
+      "founder": { "@type": "Person", "name": "Subarna Katwal" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kathmandu",
+        "addressLocality": "Kathmandu",
+        "addressRegion": "Bagmati Province",
+        "addressCountry": "NP"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 27.7172, "longitude": 85.3240 },
+      "hasMap": "https://maps.google.com/?q=Kathmandu,Nepal",
+      "areaServed": { "@type": "Country", "name": "Nepal" },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 27.7172, "longitude": 85.3240 },
+        "geoRadius": "500000"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Sunday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "priceRange": "NPR 8,000 – 150,000+",
+      "knowsLanguage": ["en", "ne"],
+      "sameAs": [],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development Nepal", "url": "https://apexiontechnologies.vercel.app/services/web-development.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development Nepal", "url": "https://apexiontechnologies.vercel.app/services/custom-software.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Services Nepal", "url": "https://apexiontechnologies.vercel.app/services/seo.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing Nepal", "url": "https://apexiontechnologies.vercel.app/services/digital-ads.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Automation and AI Nepal", "url": "https://apexiontechnologies.vercel.app/services/automation-ai.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Hosting and IT Support Nepal", "url": "https://apexiontechnologies.vercel.app/services/hosting-support.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hotel Digital Solutions Nepal", "url": "https://apexiontechnologies.vercel.app/services/hotel-solutions.html" } }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a website or IT project cost in Nepal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Every quote is fixed after a free call. Websites NPR 25,000–150,000+, SEO NPR 8,000–25,000/month, automation NPR 15,000–50,000, AI chatbots NPR 20,000–60,000, hotel package NPR 30,000–100,000+. You always know the price before any work starts." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does web development take in Nepal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most websites launch in 1–3 weeks. Software and automation depend on scope — we agree a clear deadline up front, on time or we make it right." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the website and code Apexion builds?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The code, domain, hosting and every account are in your name. No lock-in, ever — you can take your business anywhere." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pay for IT services in Nepal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "eSewa, Khalti, Fonepay or bank transfer. We split into a start payment and a payment on delivery." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide support after the website launches?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. You get a real human on WhatsApp, plus optional hosting, backups and support plans to keep everything running." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Apexion Technologies a registered IT company in Nepal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, Apexion Technologies Pvt. Ltd. is registered in Nepal, based in Kathmandu, founded in 2026. You deal with a real, accountable local team." }
+        }
+      ]
+    }
   ]
 }
 </script>
