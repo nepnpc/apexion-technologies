@@ -244,7 +244,7 @@ footer { background: var(--ink-deep); color: rgba(255,255,255,.55); padding: 4.5
 .subhero .lead { font-size: 1.16rem; color: var(--body); max-width: 48ch; margin-bottom: 2rem; }
 .subhero-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
 .subhero-art { border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-1); }
-.subhero-art img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 320px; }
+.subhero-art img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
 /* what's included — reuses .cards / .card */
 .incl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
@@ -311,7 +311,6 @@ footer { background: var(--ink-deep); color: rgba(255,255,255,.55); padding: 4.5
 
 /* gentle float on the service-page hero art */
 @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
-.subhero-art { animation: floaty 6.5s ease-in-out infinite; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 940px) {
