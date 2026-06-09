@@ -54,7 +54,7 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 800; letter-spacing: -.02em; li
 #nav.scrolled { border-color: var(--line); box-shadow: 0 6px 24px rgba(20,28,38,.05); }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: .85rem 5%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .logo { display: flex; align-items: center; gap: .55rem; }
-.logo-mark { width: 28px; height: 34px; display: block; flex-shrink: 0; }
+.logo-mark { width: 36px; height: 36px; display: block; flex-shrink: 0; }
 .logo-words { display: flex; flex-direction: column; line-height: 1.1; }
 .logo-text { font-size: 1.1rem; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
 .logo-sub { font-size: .56rem; font-weight: 700; color: var(--muted); letter-spacing: .2em; text-transform: uppercase; margin-top: .1rem; }
