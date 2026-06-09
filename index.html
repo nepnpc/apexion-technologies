@@ -404,18 +404,17 @@
 /* ===== why tabs (auto-cycle) — homepage only ===== */
 (function () {
   var WHY = [
-    { h: 'The right people on your project', p: 'You work directly with the people building your software, no layers, no account-manager telephone game.', li: ['One accountable point of contact', 'Clear communication, in plain language', 'We treat your deadlines as our own'] },
-    { h: 'A process with no surprises', p: 'Fixed scope and price up front, regular drafts, and a launch you can plan around.', li: ['Free discovery call to scope it right', 'Fixed quote before any work starts', 'Regular check-ins, you steer along the way'] },
-    { h: 'Technology built to last', p: 'Fast, secure, well-built code on tools you already trust, and you own all of it.', li: ['Sub-second loads, SSL and backups', 'Modern, maintainable code', 'You own the code, domains and accounts'] }
+    { h: 'The right people on your project', p: 'You work directly with the people building your software, no layers, no account-manager telephone game.', li: ['One accountable point of contact', 'Clear communication, in plain language', 'We treat your deadlines as our own'], img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=720&q=75&auto=format&fit=crop', alt: 'Team collaborating at desk' },
+    { h: 'A process with no surprises', p: 'Fixed scope and price up front, regular drafts, and a launch you can plan around.', li: ['Free discovery call to scope it right', 'Fixed quote before any work starts', 'Regular check-ins, you steer along the way'], img: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=720&q=75&auto=format&fit=crop', alt: 'Project planning on whiteboard' },
+    { h: 'Technology built to last', p: 'Fast, secure, well-built code on tools you already trust, and you own all of it.', li: ['Sub-second loads, SSL and backups', 'Modern, maintainable code', 'You own the code, domains and accounts'], img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=720&q=75&auto=format&fit=crop', alt: 'Developer working on laptop' }
   ];
   var panel = document.getElementById('why-panel');
   if (!panel) return;
-  var artBars = '<svg viewBox="0 0 200 160"><rect x="10" y="10" width="180" height="140" rx="14" fill="#fff" stroke="#e8ebef"/><rect x="28" y="32" width="80" height="10" rx="5" fill="#141c26"/><rect x="28" y="54" width="120" height="7" rx="3.5" fill="#eef0f3"/><rect x="28" y="84" width="20" height="46" rx="3" fill="#93c5fd"/><rect x="58" y="70" width="20" height="60" rx="3" fill="#2563eb"/><rect x="88" y="92" width="20" height="38" rx="3" fill="#93c5fd"/><rect x="118" y="60" width="20" height="70" rx="3" fill="#2563eb"/><rect x="148" y="80" width="20" height="50" rx="3" fill="#60a5fa"/></svg>';
   function renderWhy(i) {
     var d = WHY[i];
     panel.innerHTML = '<div><h3>' + d.h + '</h3><p>' + d.p + '</p><ul class="why-list">' +
       d.li.map(function (x) { return '<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>' + x + '</li>'; }).join('') +
-      '</ul></div><div class="why-visual">' + artBars + '</div>';
+      '</ul></div><div class="why-visual"><img src="' + d.img + '" alt="' + d.alt + '" width="720" height="480" loading="lazy" decoding="async"></div>';
   }
   var whyTabs = document.getElementById('why-tabs');
   var whyBtns = whyTabs.querySelectorAll('.why-tab');
