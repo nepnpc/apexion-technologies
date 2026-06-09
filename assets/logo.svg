@@ -1,22 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 48" fill="none">
   <defs>
-    <linearGradient id="al" x1="0" y1="0" x2="44" y2="48" gradientUnits="userSpaceOnUse">
+    <linearGradient id="al" x1="22" y1="3" x2="22" y2="46" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#22d3ee"/>
-      <stop offset="55%" stop-color="#2563eb"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#2563eb"/>
     </linearGradient>
-    <linearGradient id="as" x1="0" y1="0" x2="44" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#67e8f9"/>
-      <stop offset="100%" stop-color="#93c5fd"/>
-    </linearGradient>
-    <clipPath id="rc">
-      <polygon points="22,4 30,4 43,46 32,46"/>
-    </clipPath>
   </defs>
-  <!-- Left leg -->
-  <polygon points="14,4 22,4 12,46 1,46" fill="url(#al)"/>
-  <!-- Right leg -->
-  <polygon points="22,4 30,4 43,46 32,46" fill="url(#al)"/>
-  <!-- Slash — large enough to cross the whole leg; clipped so it only shows inside the right leg -->
-  <polygon points="21,10 30,6 44,40 35,44" fill="url(#as)" clip-path="url(#rc)"/>
+  <!-- A letterform: pointed apex, two legs, hollow interior -->
+  <path fill="url(#al)" d="M 2,46 L 22,3 L 42,46 L 34,46 L 22,20 L 10,46 Z"/>
+  <!-- Thin dark diagonal slash extending across the full A -->
+  <polygon points="1,36 0,32 43,18 44,22" fill="#0f172a" opacity="0.75"/>
 </svg>
