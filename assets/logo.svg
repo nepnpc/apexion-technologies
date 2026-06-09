@@ -5,15 +5,18 @@
       <stop offset="55%" stop-color="#2563eb"/>
       <stop offset="100%" stop-color="#7c3aed"/>
     </linearGradient>
-    <linearGradient id="as" x1="44" y1="0" x2="10" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#7dd3fc"/>
-      <stop offset="100%" stop-color="#60a5fa"/>
+    <linearGradient id="as" x1="0" y1="0" x2="44" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
     </linearGradient>
+    <clipPath id="rc">
+      <polygon points="22,4 30,4 43,46 32,46"/>
+    </clipPath>
   </defs>
-  <!-- Left leg: 8 wide at top, 11 wide at bottom -->
+  <!-- Left leg -->
   <polygon points="14,4 22,4 12,46 1,46" fill="url(#al)"/>
-  <!-- Right leg: 8 wide at top, 11 wide at bottom -->
+  <!-- Right leg -->
   <polygon points="22,4 30,4 43,46 32,46" fill="url(#al)"/>
-  <!-- Slash accent: cuts from outer-right of right leg into the hollow interior -->
-  <polygon points="38,20 31,16 23,32 30,36" fill="url(#as)"/>
+  <!-- Slash — large enough to cross the whole leg; clipped so it only shows inside the right leg -->
+  <polygon points="21,10 30,6 44,40 35,44" fill="url(#as)" clip-path="url(#rc)"/>
 </svg>
