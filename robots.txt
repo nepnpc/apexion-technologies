@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apexiontechnologies.vercel.app/sitemap.xml
