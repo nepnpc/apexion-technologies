@@ -1,4 +1,4 @@
-/* ===== Apexion — shared behaviour (every page) =====
+﻿/* ===== Apexion — shared behaviour (every page) =====
    nav scroll state, scroll-reveal, FAQ accordion, mobile menu, chatbot. */
 
 (function () {
@@ -234,7 +234,7 @@
   if (!carousel) return;
   var track = carousel.querySelector('.qc-track');
   var dots = carousel.querySelectorAll('.qc-dot');
-  var bgs = ['#0c1b18', '#0c1b18'];
+  var bgs = ['#0f172a', '#0f172a'];
   var cur = 0, timer;
 
   function go(n) {

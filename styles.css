@@ -1,23 +1,23 @@
-/* ===== Apexion Technologies — shared design system =====
+﻿/* ===== Apexion Technologies — shared design system =====
    Single source of truth for every page (index + service subpages).
-   Accent CSS vars are named --amber-* for history but hold GREEN values. */
+   Accent CSS vars are named --amber-* for history but hold BLUE values. */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --bg:        #ffffff;
-  --bg-soft:   #f3f7f6;   /* faint green-grey, warmer than plain grey */
+  --bg-soft:   #eff6ff;   /* faint blue-grey */
   --ink:       #141c26;   /* headings */
   --body:      #4a5663;   /* body text */
   --muted:     #8b95a1;
   --line:      #e8ebef;
   --line-2:    #f0f2f5;
 
-  /* "green" accent (deep teal-green) — kept under amber-* names */
-  --amber:     #0f766e;
-  --amber-600: #0b5c55;
-  --amber-50:  #e8f3f1;
-  --ink-deep:  #0c1b18;
+  /* "blue" accent (deep blue) — kept under amber-* names */
+  --amber:     #2563eb;
+  --amber-600: #1d4ed8;
+  --amber-50:  #dbeafe;
+  --ink-deep:  #0f172a;
 
   --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px;
   --sh-1: 0 1px 2px rgba(20,28,38,.04), 0 10px 30px rgba(20,28,38,.06);
@@ -39,8 +39,8 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 800; letter-spacing: -.02em; li
 /* ===== BTN ===== */
 .btn { display: inline-flex; align-items: center; gap: .5rem; cursor: pointer; font-family: inherit; font-size: .98rem; font-weight: 700; padding: .8rem 1.5rem; border-radius: 100px; border: 1.5px solid transparent; transition: transform .16s var(--ease), box-shadow .25s, background .2s, border-color .2s, color .2s; }
 .btn svg { width: 18px; height: 18px; }
-.btn-amber { background: var(--amber); color: #fff; box-shadow: 0 8px 20px rgba(15,118,110,.3); }
-.btn-amber:hover { transform: translateY(-2px); background: var(--amber-600); box-shadow: 0 12px 28px rgba(11,92,85,.4); }
+.btn-amber { background: var(--amber); color: #fff; box-shadow: 0 8px 20px rgba(37,99,235,.3); }
+.btn-amber:hover { transform: translateY(-2px); background: var(--amber-600); box-shadow: 0 12px 28px rgba(29,78,216,.4); }
 .btn-dark { background: var(--ink); color: #fff; }
 .btn-dark:hover { transform: translateY(-2px); background: var(--ink-deep); }
 .btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
@@ -54,7 +54,7 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 800; letter-spacing: -.02em; li
 #nav.scrolled { border-color: var(--line); box-shadow: 0 6px 24px rgba(20,28,38,.05); }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: .85rem 5%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .logo { display: flex; align-items: center; gap: .55rem; }
-.logo-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink-deep); display: grid; place-items: center; box-shadow: 0 6px 14px rgba(12,27,24,.28); }
+.logo-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--ink-deep); display: grid; place-items: center; box-shadow: 0 6px 14px rgba(15,23,42,.28); }
 .logo-mark svg { width: 19px; height: 19px; }
 .logo-text { font-size: 1.2rem; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
 .nav-links { display: flex; align-items: center; gap: .15rem; list-style: none; margin: 0 auto; }
@@ -157,7 +157,7 @@ section.block { padding: 6rem 0; }
 
 /* ===== FOUNDER QUOTE ===== */
 /* ===== QUOTE CAROUSEL ===== */
-.quote-band { position: relative; overflow: hidden; color: #fff; text-align: center; background: #0c1b18; }
+.quote-band { position: relative; overflow: hidden; color: #fff; text-align: center; background: #0f172a; }
 .qc-track { display: flex; transition: transform .65s cubic-bezier(.4,0,.2,1); will-change: transform; }
 .qc-slide { min-width: 100%; height: clamp(360px, 42vw, 480px); padding: 4rem 2rem 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
 .quote-inner { max-width: 780px; width: 100%; display: flex; flex-direction: column; align-items: center; height: 100%; }
@@ -165,7 +165,7 @@ section.block { padding: 6rem 0; }
 .quote-band blockquote { font-size: clamp(1.4rem, 3.2vw, 2.2rem); font-weight: 700; line-height: 1.38; letter-spacing: -.02em; color: #fff; flex: 1; display: flex; align-items: center; }
 .quote-band blockquote .g { color: #34d399; }
 .q-author { display: inline-flex; align-items: center; gap: .9rem; padding: 2rem 0 2.8rem; flex-shrink: 0; }
-.q-av { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: #0f766e; box-shadow: 0 0 0 2px rgba(52,211,153,.5), 0 8px 20px rgba(0,0,0,.35); }
+.q-av { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: #2563eb; box-shadow: 0 0 0 2px rgba(52,211,153,.5), 0 8px 20px rgba(0,0,0,.35); }
 .q-author .who { text-align: left; }
 .q-author b { display: block; color: #fff; font-size: 1rem; }
 .q-author span { color: rgba(255,255,255,.55); font-size: .88rem; }
@@ -283,20 +283,20 @@ footer { background: var(--ink-deep); color: rgba(255,255,255,.55); padding: 4.5
 .faq-a p { padding: 0 1.4rem 1.2rem; font-size: .98rem; color: var(--body); }
 
 /* ===== LIGHT COLOR AMBIANCE + MICRO-MOTION ===== */
-/* soft single-tone green wash behind heroes (no neon, very low opacity) */
+/* soft single-tone blue wash behind heroes (no neon, very low opacity) */
 .hero, .subhero { position: relative; }
 .hero > .wrap, .subhero > .wrap { position: relative; z-index: 1; }
 .hero::before, .subhero::before {
   content: ''; position: absolute; z-index: 0; pointer-events: none;
   top: -14%; right: -6%; width: 480px; height: 480px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(15,118,110,.10), transparent 70%);
+  background: radial-gradient(circle, rgba(37,99,235,.10), transparent 70%);
 }
 .subhero::before { width: 560px; height: 560px; top: -18%; }
 /* a second, fainter accent low-left on subheroes for balance */
 .subhero::after {
   content: ''; position: absolute; z-index: 0; pointer-events: none;
   bottom: -30%; left: -8%; width: 420px; height: 420px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(15,118,110,.06), transparent 70%);
+  background: radial-gradient(circle, rgba(37,99,235,.06), transparent 70%);
 }
 
 /* icon micro-interactions on card/row hover */
@@ -356,7 +356,7 @@ footer { background: var(--ink-deep); color: rgba(255,255,255,.55); padding: 4.5
 }
 
 /* ===== CHATBOT ===== */
-#chat-btn { position: fixed; bottom: 1.6rem; right: 1.6rem; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--amber); border: 0; cursor: pointer; display: grid; place-items: center; box-shadow: 0 12px 28px rgba(15,118,110,.4); transition: transform .18s var(--ease); }
+#chat-btn { position: fixed; bottom: 1.6rem; right: 1.6rem; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--amber); border: 0; cursor: pointer; display: grid; place-items: center; box-shadow: 0 12px 28px rgba(37,99,235,.4); transition: transform .18s var(--ease); }
 #chat-btn:hover { transform: scale(1.06); }
 #chat-btn svg { width: 23px; height: 23px; stroke: #fff; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 #chat-btn .badge { position: absolute; top: 1px; right: 3px; width: 12px; height: 12px; background: #22c55e; border-radius: 50%; border: 2px solid #fff; }
