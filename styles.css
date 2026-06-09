@@ -140,7 +140,7 @@ section.block { padding: 6rem 0; }
 .svc-link svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .svc:hover .svc-link { opacity: 1; transform: none; }
 @media (hover: none) { .svc-link { opacity: 1; transform: none; } }
-.svc-cta { grid-column: span 2; background: var(--amber-50); border-color: var(--amber); }
+.svc-cta { grid-column: span 2; }
 .svc-cta .svc-link { opacity: 1; transform: none; }
 @media (max-width:680px) { .svc-cta { grid-column: span 1; } }
 
