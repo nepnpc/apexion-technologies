@@ -74,6 +74,23 @@
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Automation and AI Nepal", "url": "https://apexiontechnologies.vercel.app/services/automation-ai.html" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Hosting and IT Support Nepal", "url": "https://apexiontechnologies.vercel.app/services/hosting-support.html" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hotel Digital Solutions Nepal", "url": "https://apexiontechnologies.vercel.app/services/hotel-solutions.html" } }
+      ],
+      "potentialAction": [
+        {
+          "@type": "ReserveAction",
+          "name": "Book a free IT consultation",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://apexiontechnologies.vercel.app/#contact",
+            "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+          },
+          "result": { "@type": "Reservation", "name": "Free 10-minute IT consultation with Apexion Technologies" }
+        },
+        {
+          "@type": "ContactAction",
+          "name": "Contact Apexion Technologies",
+          "target": "https://apexiontechnologies.vercel.app/#contact"
+        }
       ]
     },
     {
@@ -359,8 +376,8 @@
         <input type="hidden" name="from_name" value="Apexion Website">
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <div class="cform-grid">
-          <div class="row"><label for="cf-name">Your name</label><input type="text" id="cf-name" name="name" placeholder="e.g. Ram Shrestha" required></div>
-          <div class="row"><label for="cf-phone">Phone / WhatsApp</label><input type="tel" id="cf-phone" name="phone" placeholder="98XXXXXXXX" required></div>
+          <div class="row"><label for="cf-name">Your name</label><input type="text" id="cf-name" name="name" placeholder="e.g. Ram Shrestha" autocomplete="name" required></div>
+          <div class="row"><label for="cf-phone">Phone / WhatsApp</label><input type="tel" id="cf-phone" name="phone" placeholder="98XXXXXXXX" autocomplete="tel" required></div>
           <div class="row full"><label for="cf-service">What do you need?</label>
             <select id="cf-service" name="service">
               <option value="">Select a service</option>
