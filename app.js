@@ -154,10 +154,12 @@
 
   /* offline fallback knowledge (used when no key / API fails) */
   var KB=[
-    {k:['hello','hi','hey','namaste','sup','yo'],a:"Hey! I'm Priya from Apexion. What kind of business do you run? I'll tell you what actually makes sense for you."},
-    {k:['haha','lol','hehe','lmao','😂','xd','funny'],a:"Haha, fair enough! So what does your business do? Maybe I can actually help with something."},
-    {k:['ok','okay','alright','sure','yeah','yep','yes','k '],a:"Cool! What does your business do — I'll suggest whatever fits best."},
-    {k:['no','nope','nah','not now','later','maybe'],a:"No worries! Come back anytime. You can also reach us on WhatsApp +977 9703901454 whenever you're ready."},
+    {k:['hello','hi','hey','namaste','sup'],a:"Hey! I'm Priya from Apexion. What kind of business do you run? I'll tell you what actually makes sense for you."},
+    {k:['haha','lol','hehe','lmao','xd','funny'],a:"Haha! So what does your business do? Maybe I can actually help with something."},
+    {k:['okay','alright','sure','yeah','yep'],a:"Cool! What does your business do — I'll suggest whatever fits best."},
+    {k:['nope','nah','not now','maybe later'],a:"No worries! Come back anytime. You can also reach us on WhatsApp +977 9703901454 whenever you're ready."},
+    {k:['complain','complaint','problem','issue','not working','broken','unhappy'],a:"Oh, sorry to hear that! Please WhatsApp Subarna directly at +977 9703901454 and he'll sort it out fast."},
+    {k:['shop','store','restaurant','cafe','clinic','salon','pharmacy','hotel','farm','school','office','factory','i sell','i run','i own','my business','i have a'],a:"Nice! So for your business, what's the main thing you want to fix — more customers finding you online, a website, managing things better, or something else?"},
     {k:['service','offer','do you','what can','help me','what do'],a:"We do websites, custom software, SEO, ads, automation, hosting, and a full hotel package. What's the main thing you're trying to fix or grow right now?"},
     {k:['price','cost','pricing','budget','how much','rate','afford','cheap','expensive'],a:"All quotes are fixed before we start — no surprise bills. Rough idea: websites from NPR 25k, SEO from 8k/month, software from 40k. Exact quote is free and takes about 10 minutes on a call. Want to set one up?"},
     {k:['website','web','site','landing','online store','ecommerce'],a:"We build websites starting around NPR 25k, most go live in 1–3 weeks. Are you thinking a basic business site, an online store, or something with bookings?"},
@@ -175,7 +177,14 @@
     {k:['contact','reach','whatsapp','email','phone','call','number'],a:"Easiest is WhatsApp +977 9703901454 — Subarna answers directly. Or email hello@apexion.com.np. We get back within 24 hours."},
     {k:['quote','free call','consult','discuss','talk','meeting'],a:"A free 10-minute call with Subarna and you get a real fixed quote on the spot. Want to set that up? I can take your number or you can WhatsApp +977 9703901454."}
   ];
-  function offline(t){t=(t||'').toLowerCase();for(var i=0;i<KB.length;i++)for(var j=0;j<KB[i].k.length;j++)if(t.indexOf(KB[i].k[j])!==-1)return KB[i].a;
+  function offline(t){
+    t=(t||'').toLowerCase();
+    for(var i=0;i<KB.length;i++){
+      for(var j=0;j<KB[i].k.length;j++){
+        var kw=KB[i].k[j].replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+        if(new RegExp('(?:^|\\s|[^a-z])'+kw+'(?:\\s|[^a-z]|$)').test(t))return KB[i].a;
+      }
+    }
     return "Haha not sure I caught that! What does your business do? I can suggest what might actually help.";}
 
   function add(role,text){var d=document.createElement('div');d.className='m '+role;d.textContent=text;box.appendChild(d);box.scrollTop=box.scrollHeight;return d;}
