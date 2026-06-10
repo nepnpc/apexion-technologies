@@ -108,6 +108,7 @@ DISLIKES / REJECTED (do NOT bring back):
 - Optional: add `sitemap.xml` + `robots.txt` and a custom 404 page.
 
 ## ⏳ PENDING (before launch)
+- **Set WEB3FORMS_KEY env var in Vercel.** Get free key from web3forms.com (sign up with hello@apexion.com.np) → Vercel dashboard → Project → Settings → Environment Variables → add `WEB3FORMS_KEY`. Until set, `/api/book` works but sends no email (returns success + WhatsApp link only).
 - **Contact form access key.** Homepage `#contact-form` now sends **directly to the inbox via Web3Forms** (AJAX, no redirect, inline success message; `app.js` handles it). Needs a free key: sign up at web3forms.com with hello@apexion.com.np, paste it into `value="YOUR_WEB3FORMS_ACCESS_KEY"` in `index.html`. Until set, the form fails gracefully and shows WhatsApp/email fallback. (Submissions land as email; switch provider or add a backend later if volume grows.)
 - **Real images.** Site currently uses inline SVG illustrations (framed-icon hero art on service pages, abstract bar chart in Why panel) + the real `founder.png`. Replace/augment with real photos: team, office/Kathmandu, sample work/project screenshots, and proper hero imagery. Service-page hero art (`.subhero-art`) and homepage are the main slots. Optimise (WebP, lazy-load) when added.
 

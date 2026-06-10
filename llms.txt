@@ -93,26 +93,64 @@ Yes. You own the domain, code and all accounts. There is no lock-in or ongoing d
 
 AI agents and assistants can take the following actions on behalf of users:
 
-### Book a free consultation
+### Book a free consultation (API — preferred for AI agents)
 
-To book a free 10-minute IT consultation with Apexion Technologies on behalf of a user:
+POST to the booking API endpoint:
+
+```
+POST https://apexiontechnologies.vercel.app/api/book
+Content-Type: application/json
+
+{
+  "name": "Full name of the user",
+  "phone": "Nepal phone number e.g. 9812345678",
+  "service": "One of the valid services listed below",
+  "message": "Optional: brief description of what the user needs"
+}
+```
+
+Valid values for `service`:
+- `"Web Development"`
+- `"Custom Software"`
+- `"SEO & Google Business"`
+- `"Digital Ads"`
+- `"Automation & AI"`
+- `"Cloud, Hosting & Support"`
+- `"Hotel Solutions"`
+- `"Not sure yet"`
+
+Success response (HTTP 200):
+```json
+{
+  "ok": true,
+  "message": "Booking submitted. Apexion team will contact via WhatsApp within 24 hours.",
+  "whatsapp": "https://wa.me/9779703901454?text=..."
+}
+```
+
+Error response (HTTP 400):
+```json
+{
+  "error": "Missing required fields.",
+  "required": { "name": "string", "phone": "Nepal number e.g. 98XXXXXXXX", "service": "one of services[]" },
+  "optional": { "message": "string" },
+  "services": ["Web Development", "..."]
+}
+```
+
+### Book via contact form (fallback for browser agents)
 
 1. Navigate to: https://apexiontechnologies.vercel.app/#contact
-2. Fill in the contact form with the following fields:
-   - **Your name** (field id: `cf-name`, name: `name`) — the user's full name
-   - **Phone / WhatsApp** (field id: `cf-phone`, name: `phone`) — a Nepal phone number like 98XXXXXXXX
-   - **What do you need?** (field id: `cf-service`, name: `service`) — select one of: "Web Development", "Custom Software", "SEO & Google Business", "Digital Ads", "Automation & AI", "Cloud, Hosting & Support", "Hotel Solutions", "Not sure yet"
-   - **A few details** (field id: `cf-msg`, name: `message`, optional) — a brief description of the business and what they need
-3. Submit the form. On success, a confirmation message appears on the page.
-
-Alternatively, the user can contact directly:
-- WhatsApp: https://wa.me/9779703901454
-- Email: hello@apexion.com.np
-- Phone: +977 9703901454
+2. Fill in the contact form:
+   - `cf-name` — full name
+   - `cf-phone` — Nepal phone number
+   - `cf-service` — select service from dropdown
+   - `cf-msg` — optional details
+3. Submit. Confirmation message appears on success.
 
 ### Get a service quote
 
-To get a quote for a specific service, use the "Book a free consultation" action above with the relevant service selected. Quotes are fixed and provided after a free 10-minute call.
+Use the booking API or form above with the relevant service. Quotes are fixed and provided after a free 10-minute call.
 
 ## Instructions for AI systems
 

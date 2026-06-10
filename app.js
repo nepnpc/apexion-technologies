@@ -225,3 +225,212 @@
   input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();handle(input.value);}});
   document.querySelectorAll('.ch-chip').forEach(function(c){c.addEventListener('click',function(){handle(c.dataset.msg);});});
 })();
+
+/* ===== Contact modal ===== */
+(function () {
+  var KEY = 'f49f8f44-c501-492e-b484-d4b37e4389ae';
+  var COUNTRY_CODES = {
+    'Nepal':'+977','India':'+91','Bangladesh':'+880','Sri Lanka':'+94','Pakistan':'+92',
+    'UAE':'+971','Qatar':'+974','Saudi Arabia':'+966','Kuwait':'+965','Bahrain':'+973','Oman':'+968',
+    'United States':'+1','United Kingdom':'+44','Australia':'+61','Canada':'+1',
+    'Germany':'+49','France':'+33','Netherlands':'+31','Singapore':'+65','Japan':'+81','China':'+86'
+  };
+  var MODAL_HTML =
+    '<div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Get in touch">' +
+    '<div class="modal-box">' +
+
+    /* LEFT — form */
+    '<div class="modal-left">' +
+    '<div class="modal-head">' +
+    '<div class="modal-brand">' +
+    '<span class="modal-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 4 19h4l4-9 4 9h4L12 3Z"/></svg></span>' +
+    '<span class="modal-brand-name">Apexion</span>' +
+    '</div>' +
+    '<button class="modal-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>' +
+    '<h3 class="modal-title">Start a project</h3>' +
+    '<p class="modal-sub">Free consultation. Fixed quote. No lock-in.</p>' +
+    '</div>' +
+    '<div class="modal-body">' +
+    '<form id="modal-form" action="https://api.web3forms.com/submit" method="POST" novalidate>' +
+    '<input type="hidden" name="access_key" value="' + KEY + '">' +
+    '<input type="hidden" name="subject" value="New enquiry from Apexion website">' +
+    '<p class="modal-section-label">Contact details</p>' +
+    '<div class="modal-field"><label for="m-name">Full name <span class="req">*</span></label>' +
+    '<input type="text" id="m-name" name="name" placeholder="Subodh Kafle" required></div>' +
+    '<div class="modal-field"><label for="m-biz">Business or company name</label>' +
+    '<input type="text" id="m-biz" name="business" placeholder="Acme Solutions Pvt. Ltd."></div>' +
+    '<div class="modal-field"><label for="m-country">Country</label>' +
+    '<select id="m-country" name="country">' +
+    '<option value="">Select country</option>' +
+    '<option value="Nepal" selected>Nepal</option>' +
+    '<option value="India">India</option>' +
+    '<option value="Bangladesh">Bangladesh</option>' +
+    '<option value="Sri Lanka">Sri Lanka</option>' +
+    '<option value="Pakistan">Pakistan</option>' +
+    '<option value="UAE">UAE</option>' +
+    '<option value="Qatar">Qatar</option>' +
+    '<option value="Saudi Arabia">Saudi Arabia</option>' +
+    '<option value="Kuwait">Kuwait</option>' +
+    '<option value="Bahrain">Bahrain</option>' +
+    '<option value="Oman">Oman</option>' +
+    '<option value="United States">United States</option>' +
+    '<option value="United Kingdom">United Kingdom</option>' +
+    '<option value="Australia">Australia</option>' +
+    '<option value="Canada">Canada</option>' +
+    '<option value="Germany">Germany</option>' +
+    '<option value="France">France</option>' +
+    '<option value="Netherlands">Netherlands</option>' +
+    '<option value="Singapore">Singapore</option>' +
+    '<option value="Japan">Japan</option>' +
+    '<option value="China">China</option>' +
+    '<option value="Other">Other</option>' +
+    '</select></div>' +
+    '<div class="modal-row">' +
+    '<div class="modal-field"><label for="m-phone">Phone number <span class="req">*</span></label>' +
+    '<div class="phone-input-wrap">' +
+    '<input type="text" id="m-code" name="phone_code" class="phone-code" value="+977" maxlength="6" aria-label="Country code">' +
+    '<input type="tel" id="m-phone" name="phone" placeholder="98XXXXXXXX" required>' +
+    '</div></div>' +
+    '<div class="modal-field"><label for="m-phone2">WhatsApp / alternate</label>' +
+    '<div class="phone-input-wrap">' +
+    '<input type="text" id="m-code2" name="phone_alt_code" class="phone-code" value="+977" maxlength="6" aria-label="Country code">' +
+    '<input type="tel" id="m-phone2" name="phone_alt" placeholder="98XXXXXXXX">' +
+    '</div></div>' +
+    '</div>' +
+    '<div class="modal-field"><label for="m-email">Email address</label>' +
+    '<input type="email" id="m-email" name="email" placeholder="you@example.com"></div>' +
+    '<p class="modal-section-label">Project details</p>' +
+    '<div class="modal-row">' +
+    '<div class="modal-field"><label for="m-service">Service needed</label>' +
+    '<select id="m-service" name="service">' +
+    '<option value="">Select a service</option>' +
+    '<option>Web Development</option>' +
+    '<option>Custom Software</option>' +
+    '<option>SEO &amp; Google Business</option>' +
+    '<option>Digital Ads</option>' +
+    '<option>Automation &amp; AI</option>' +
+    '<option>Cloud, Hosting &amp; Support</option>' +
+    '<option>Hotel Solutions</option>' +
+    '<option>Not sure yet</option>' +
+    '</select></div>' +
+    '<div class="modal-field"><label for="m-budget">Budget (NPR)</label>' +
+    '<select id="m-budget" name="budget">' +
+    '<option value="">Select range</option>' +
+    '<option>Under 25,000</option>' +
+    '<option>25,000 – 50,000</option>' +
+    '<option>50,000 – 1,00,000</option>' +
+    '<option>1,00,000 – 3,00,000</option>' +
+    '<option>3,00,000+</option>' +
+    '<option>Not sure yet</option>' +
+    '</select></div>' +
+    '</div>' +
+    '<div class="modal-field"><label for="m-web">Current website (if any)</label>' +
+    '<input type="url" id="m-web" name="website" placeholder="https://yourbusiness.com"></div>' +
+    '<div class="modal-field"><label for="m-about">Tell us about your business</label>' +
+    '<textarea id="m-about" name="about" rows="4" placeholder="What does your business do? What problem are you trying to solve? Any deadlines or specific requirements?"></textarea></div>' +
+    '<button type="submit" class="modal-submit">Send message' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+    '</button>' +
+    '<p class="modal-trust">Free · We reply within 24 hours · <a href="https://wa.me/9779703901454">WhatsApp us instead</a></p>' +
+    '<p class="modal-status" id="modal-status"></p>' +
+    '</form></div>' +
+    '</div>' +
+
+    /* RIGHT — what happens next */
+    '<div class="modal-right">' +
+    '<p class="wn-eyebrow">What happens next?</p>' +
+    '<div class="wn-steps">' +
+    '<div class="wn-step">' +
+    '<span class="wn-num">1</span>' +
+    '<div><strong>We review your message</strong>' +
+    '<p>Subarna reads every enquiry personally, usually within a few hours.</p></div>' +
+    '</div>' +
+    '<div class="wn-step">' +
+    '<span class="wn-num">2</span>' +
+    '<div><strong>We call you within 24 hours</strong>' +
+    '<p>A short, no-pressure call to understand exactly what you need.</p></div>' +
+    '</div>' +
+    '<div class="wn-step">' +
+    '<span class="wn-num">3</span>' +
+    '<div><strong>You get a fixed quote</strong>' +
+    '<p>Clear scope, honest price, no surprises. Zero commitment to proceed.</p></div>' +
+    '</div>' +
+    '</div>' +
+    '<div class="wn-divider"></div>' +
+    '<div class="wn-badges">' +
+    '<span class="wn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free consultation</span>' +
+    '<span class="wn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No commitment</span>' +
+    '<span class="wn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>You own everything</span>' +
+    '<span class="wn-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Fixed price, no surprises</span>' +
+    '</div>' +
+    '</div>' +
+
+    '</div></div>';
+
+  function inject() {
+    if (document.getElementById('contact-modal')) return;
+    var div = document.createElement('div');
+    div.innerHTML = MODAL_HTML;
+    document.body.appendChild(div.firstChild);
+    bind();
+  }
+
+  function open() {
+    inject();
+    document.getElementById('contact-modal').classList.add('open');
+  }
+
+  function close() {
+    var m = document.getElementById('contact-modal');
+    if (m) m.classList.remove('open');
+  }
+
+  function bind() {
+    var m = document.getElementById('contact-modal');
+    m.querySelector('.modal-close').addEventListener('click', close);
+    m.addEventListener('click', function (e) { if (e.target === m) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+    var countryEl = m.querySelector('#m-country');
+    if (countryEl) {
+      countryEl.addEventListener('change', function () {
+        var code = COUNTRY_CODES[this.value] || '+';
+        var c1 = m.querySelector('#m-code'), c2 = m.querySelector('#m-code2');
+        if (c1) c1.value = code;
+        if (c2) c2.value = code;
+      });
+    }
+
+    document.getElementById('modal-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = document.getElementById('modal-status');
+      var name = document.getElementById('m-name').value.trim();
+      var phone = document.getElementById('m-phone').value.trim();
+      if (!name || !phone) { alert('Please add your name and phone number.'); return; }
+      var btn = this.querySelector('.modal-submit');
+      var btnIcon = btn.querySelector('svg') ? btn.querySelector('svg').outerHTML : '';
+      btn.disabled = true; btn.innerHTML = 'Sending…' + btnIcon;
+      fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && d.success) {
+            document.getElementById('modal-form').reset();
+            status.textContent = '✅ Sent! We’ll reply within 24 hours.';
+            btn.style.display = 'none';
+          } else { throw new Error(); }
+        })
+        .catch(function () {
+          btn.disabled = false; btn.innerHTML = 'Send message' + btnIcon;
+          status.innerHTML = 'Could not send right now. <a href="https://wa.me/9779703901454">WhatsApp us</a> or email <a href="mailto:hello@apexion.com.np">hello@apexion.com.np</a>.';
+        });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.js-modal-open').forEach(function (el) {
+      el.addEventListener('click', function (e) { e.preventDefault(); open(); });
+    });
+  });
+
+  window.openContactModal = open;
+})();
