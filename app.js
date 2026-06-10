@@ -103,9 +103,7 @@
 (function () {
   if (!document.getElementById('chat-btn')) return;   // skip if widget markup absent
 
-  var GROQ_KEY = '';                                   // <-- paste your gsk_... key here (or leave empty)
-  var GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-  var MODEL    = 'llama-3.3-70b-versatile';
+  /* AI handled server-side via /api/chat (Vercel function, key in OPENAI_KEY env var) */
 
   var SYSTEM = [
     "You are Priya, a customer success rep at Apexion Technologies — a small IT studio in Kathmandu, Nepal. You text like a real person on WhatsApp: casual, warm, to the point. Clients are regular business owners, not tech people.",
@@ -216,21 +214,19 @@
       w.remove();add('user','Name: '+n+', Phone: '+p+', Date: '+d+', Service: '+s);
       add('bot','✅ Thanks, '+n+'! Noted. Please also message us on WhatsApp (wa.me/9779703901454) so we can lock in '+d+' for your '+s+' consultation. We reply within 24 hours.');});}
 
-  function askGroq(){
+  function askAI(){
     showTyping();
-    fetch(GROQ_URL,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+GROQ_KEY},
-      body:JSON.stringify({model:MODEL,temperature:0.65,max_tokens:200,
-        messages:[{role:'system',content:SYSTEM}].concat(history.slice(-10))})})
+    fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:history.slice(-10)})})
     .then(function(r){return r.json();})
     .then(function(data){
       hideTyping();
-      var msg=data&&data.choices&&data.choices[0]&&data.choices[0].message&&data.choices[0].message.content;
+      var msg=data&&data.reply;
       if(!msg){ msg=offline(history.length?history[history.length-1].content:''); }
-      msg=msg.trim();
       history.push({role:'assistant',content:msg});
       add('bot',msg);
     })
-    .catch(function(){ hideTyping(); add('bot', offline(history.length?history[history.length-1].content:'')); });
+    .catch(function(){ hideTyping(); add('bot',offline(history.length?history[history.length-1].content:'')); });
   }
 
   function handle(text){
@@ -239,8 +235,8 @@
     if(/(book|appointment|consultation|schedule|call me|meeting)/.test(text.toLowerCase())){
       add('bot','Great! Fill in your details below and we will get back to you within 24 hours.'); bookingForm(); return; }
     history.push({role:'user',content:text});
-    if(GROQ_KEY){ askGroq(); }
-    else { setTimeout(function(){ var m=offline(text); history.push({role:'assistant',content:m}); add('bot',m); },300); }
+    if(window.location.protocol==='file:'){ setTimeout(function(){ var m=offline(text); history.push({role:'assistant',content:m}); add('bot',m); },300); }
+    else { askAI(); }
   }
 
   btn.addEventListener('click',function(){toggle(true);});
