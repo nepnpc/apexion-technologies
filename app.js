@@ -188,7 +188,7 @@
       setTimeout(function(){input.focus();},200);}}
 
   function bookingForm(){var w=document.createElement('div');w.className='bform';
-    w.innerHTML='<label>Your name</label><input id="bn" placeholder="e.g. Ram Shrestha"><label>Phone / WhatsApp</label><input id="bp" placeholder="98XXXXXXXX"><label>Preferred date</label><input id="bd" type="date" min="'+new Date().toISOString().split('T')[0]+'"><label>Service</label><select id="bs"><option value="">Select a service</option><option>Website</option><option>Custom software</option><option>SEO</option><option>Ads &amp; social</option><option>Automation</option><option>AI chatbot</option><option>Hosting / support</option><option>Hotel solution</option><option>Not sure yet</option></select><button id="bsub">Confirm booking</button>';
+    w.innerHTML='<label>Your name</label><input id="bn" placeholder="e.g. Subodh Kafle"><label>Phone / WhatsApp</label><input id="bp" placeholder="98XXXXXXXX"><label>Preferred date</label><input id="bd" type="date" min="'+new Date().toISOString().split('T')[0]+'"><label>Service</label><select id="bs"><option value="">Select a service</option><option>Website</option><option>Custom software</option><option>SEO</option><option>Ads &amp; social</option><option>Automation</option><option>AI chatbot</option><option>Hosting / support</option><option>Hotel solution</option><option>Not sure yet</option></select><button id="bsub">Confirm booking</button>';
     box.appendChild(w);box.scrollTop=box.scrollHeight;
     document.getElementById('bsub').addEventListener('click',function(){
       var n=document.getElementById('bn').value.trim(),p=document.getElementById('bp').value.trim(),d=document.getElementById('bd').value,s=document.getElementById('bs').value;
