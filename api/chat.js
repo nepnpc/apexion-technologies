@@ -58,7 +58,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
       body: JSON.stringify({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-1.5-flash',
         temperature: 0.7,
         max_tokens: 200,
         messages: [{ role: 'system', content: SYSTEM }].concat(messages.slice(-10))
