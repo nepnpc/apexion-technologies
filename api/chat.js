@@ -50,15 +50,15 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'messages array required' });
   }
 
-  const key = process.env.OPENAI_KEY;
+  const key = process.env.GEMINI_KEY;
   if (!key) return res.status(503).json({ error: 'AI not configured' });
 
   try {
-    const r = await fetch('https://api.openai.com/v1/chat/completions', {
+    const r = await fetch('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: 'gemini-2.0-flash',
         temperature: 0.7,
         max_tokens: 200,
         messages: [{ role: 'system', content: SYSTEM }].concat(messages.slice(-10))
