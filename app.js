@@ -155,34 +155,45 @@
   /* offline fallback knowledge (used when no key / API fails) */
   var KB=[
     {k:['hello','hi','hey','namaste','sup'],a:"Hey! I'm Priya from Apexion. What kind of business do you run? I'll tell you what actually makes sense for you."},
-    {k:['haha','lol','hehe','lmao','xd','funny'],a:"Haha! So what does your business do? Maybe I can actually help with something."},
-    {k:['okay','alright','sure','yeah','yep'],a:"Cool! What does your business do — I'll suggest whatever fits best."},
-    {k:['nope','nah','not now','maybe later'],a:"No worries! Come back anytime. You can also reach us on WhatsApp +977 9703901454 whenever you're ready."},
-    {k:['complain','complaint','problem','issue','not working','broken','unhappy'],a:"Oh, sorry to hear that! Please WhatsApp Subarna directly at +977 9703901454 and he'll sort it out fast."},
-    {k:['shop','store','restaurant','cafe','clinic','salon','pharmacy','hotel','farm','school','office','factory','i sell','i run','i own','my business','i have a'],a:"Nice! So for your business, what's the main thing you want to fix — more customers finding you online, a website, managing things better, or something else?"},
-    {k:['service','offer','do you','what can','help me','what do'],a:"We do websites, custom software, SEO, ads, automation, hosting, and a full hotel package. What's the main thing you're trying to fix or grow right now?"},
-    {k:['price','cost','pricing','budget','how much','rate','afford','cheap','expensive'],a:"All quotes are fixed before we start — no surprise bills. Rough idea: websites from NPR 25k, SEO from 8k/month, software from 40k. Exact quote is free and takes about 10 minutes on a call. Want to set one up?"},
-    {k:['website','web','site','landing','online store','ecommerce'],a:"We build websites starting around NPR 25k, most go live in 1–3 weeks. Are you thinking a basic business site, an online store, or something with bookings?"},
-    {k:['software','app','system','dashboard','tool','inventory','billing','crm'],a:"Yeah we build custom software — dashboards, billing systems, booking tools, whatever your team actually needs. What process is giving you the most headache right now?"},
-    {k:['seo','google','rank','search','traffic','google maps','maps'],a:"Getting on Google and Google Maps makes a big difference for most businesses. We handle the whole thing for around NPR 8k–25k/month. Want to know how your business is showing up right now?"},
-    {k:['ad','ads','facebook','google ads','digital','marketing','campaign','boost'],a:"We run Facebook and Google Ads from start to finish — creatives, targeting, and monthly reports. What are you trying to promote?"},
-    {k:['automat','bot','chatbot','ai','workflow','manual','repeat'],a:"Automation can save a lot of time on repetitive stuff — invoicing, follow-ups, chatbots, reports. What's the thing your team does manually that drives you crazy?"},
-    {k:['host','hosting','server','domain','cloud','google workspace','email','backup'],a:"We do managed hosting with backups and real WhatsApp support if anything breaks — starting NPR 3k/month. No ticket queues, just a real person. Want more info?"},
-    {k:['hotel','booking','ota','room','resort','lodge','guest','agoda','booking.com'],a:"Oh nice, hospitality! We do a full hotel package — direct booking site, OTA setup, Google Maps, review management. Cuts your OTA commission significantly. Want a quick overview?"},
-    {k:['time','long','timeline','deadline','fast','quick','when','how soon'],a:"Websites usually go live in 1–3 weeks. For software we agree on a deadline upfront — on time or we fix it at our cost. What's your target date?"},
-    {k:['support','maintain','after','update','break','help after'],a:"We stay with you after launch — monitored hosting, updates, and a real human on WhatsApp when something breaks. No disappearing after delivery."},
-    {k:['own','code','lock','data','mine','contract'],a:"You own everything — the code, domain, all accounts and data. If you ever leave us you take it all with you. No lock-in, no strings."},
-    {k:['pay','payment','esewa','khalti','fonepay','bank','transfer'],a:"We take eSewa, Khalti, Fonepay, and bank transfer. Usually 50% upfront and 50% when we deliver."},
-    {k:['trust','real','legit','registered','company','fake'],a:"Apexion is a registered company in Kathmandu. Subarna Katwal is the founder and you can reach him directly on WhatsApp — no middlemen or call centres."},
-    {k:['contact','reach','whatsapp','email','phone','call','number'],a:"Easiest is WhatsApp +977 9703901454 — Subarna answers directly. Or email hello@apexion.com.np. We get back within 24 hours."},
-    {k:['quote','free call','consult','discuss','talk','meeting'],a:"A free 10-minute call with Subarna and you get a real fixed quote on the spot. Want to set that up? I can take your number or you can WhatsApp +977 9703901454."}
+    {k:['haha','hehe','lol','lmao','xd','funny','joke'],a:"Haha! So what does your business do? Maybe I can actually help."},
+    {k:['okay','alright','sure','yeah','yep','sounds good','got it'],a:"Cool! What does your business need most right now?"},
+    {k:['nope','nah','not now','maybe later','no thanks'],a:"No worries! Come back anytime. Or WhatsApp us at +977 9703901454 whenever you're ready."},
+    {k:['thanks','thank you','thx','ty','appreciate'],a:"You're welcome! Anything else I can help with?"},
+    {k:['complain','complaint','issue','not working','broken','unhappy','frustrated','angry','worst','bad service','disappointed'],a:"Sorry to hear that! Please WhatsApp Subarna directly at +977 9703901454 — he handles all complaints personally and sorts things fast."},
+    {k:['who are you','about you','team','founder','subarna','nabin','who built','who made'],a:"Apexion was founded by Subarna Katwal in Kathmandu. Small team, everyone works directly with clients — no middlemen. Want to connect with Subarna?"},
+    {k:['human','real person','speak to','talk to','connect me','someone real'],a:"Of course! WhatsApp Subarna directly at +977 9703901454 — he's the founder and handles everything personally."},
+    {k:['where are you','your location','where based','your office'],a:"We're based in Kathmandu, Nepal. We work with businesses across Nepal and internationally — everything runs on WhatsApp and remote delivery."},
+    {k:['trust','legit','real company','registered','fake','scam','pvt','private limited'],a:"Apexion is a registered company in Kathmandu. Subarna answers WhatsApp directly — no call centres or middlemen."},
+    {k:['why choose','choose you','why apexion','better than','other company','compared to','what makes you different'],a:"Fixed price before we start, you own everything you pay for, and you get a real human on WhatsApp — not a helpdesk ticket. That's rare from any agency."},
+    {k:['freelancer','freelance','agency vs'],a:"We're a small studio — not a big agency with layers of account managers, not a random freelancer either. Subarna works directly on your project."},
+    {k:['portfolio','past work','previous work','example work','show me work','case study'],a:"We're a new company but Subarna has years of experience. Best to jump on a quick call — he can walk you through relevant examples for your business type."},
+    {k:['guarantee','warranty','revision','revise','break after','support after','what if something','after delivery'],a:"We don't disappear after launch. If something breaks we fix it. Fixed price, real WhatsApp support — no ticket queues."},
+    {k:['will i own','do i own','ownership','lock-in','my code','no lock','take my data'],a:"You own everything — all code, domain, accounts and data. If you ever leave us you take it all. No lock-in, no strings attached."},
+    {k:['how do i pay','how can i pay','payment method','esewa','khalti','fonepay','bank transfer','advance payment','pay method'],a:"We take eSewa, Khalti, Fonepay, and bank transfer. Typically 50% upfront and 50% on delivery."},
+    {k:['logo','branding','brand identity','graphic design','banner design','flyer','poster design'],a:"We focus on websites and digital. For logo and branding design we can point you to someone good. What's the main digital thing you need?"},
+    {k:['social media management','manage social','content posting','instagram page management','facebook page management'],a:"We run paid ad campaigns on social media. For regular content posting and page management, that's not our main focus — but we can point you to the right person."},
+    {k:['hotel','resort','lodge','guest house','bnb','airbnb','agoda','booking.com','ota commission','hospitality','tourism','trekking company'],a:"Oh nice! We have a full hotel package — direct booking site, OTA setup, Google Maps, and review management. Cuts your OTA commission a lot. Want a quick overview?"},
+    {k:['automate','automation','workflow','chatbot','whatsapp bot','repetitive task','manual work','save time','auto invoice'],a:"Automation saves a lot of daily time — chatbots, auto-invoicing, follow-ups, reports. What task is eating your team's time most?"},
+    {k:['mobile app','android app','ios app','phone app','native app'],a:"We build web apps that work great on mobile. For a native Android/iOS app we'd need to scope it on a call — want to set one up?"},
+    {k:['custom software','dashboard','inventory system','inventory management','billing system','crm','erp','management system','pos system','booking system','internal tool','web app'],a:"Yeah we build custom software — billing systems, dashboards, inventory tools, whatever your team actually needs. What process is giving you the most headache?"},
+    {k:['host','hosting','server','domain','cloud hosting','google workspace','email setup','backup','uptime','site maintenance'],a:"We do managed hosting with real WhatsApp support if anything breaks — starting NPR 3k/month. No ticket queues, just a real person. Want more info?"},
+    {k:['seo','rank on google','search ranking','google maps listing','google business profile','search traffic','keyword research','local search'],a:"Getting on Google and Google Maps makes a real difference. We handle the whole thing for around NPR 8k–25k/month. Want to see how your business shows up right now?"},
+    {k:['facebook ads','google ads','instagram ads','digital ads','run ads','paid ads','ad campaign','boost post','ad budget'],a:"We run Facebook and Google Ads end to end — creatives, targeting, and monthly reports. What are you trying to promote?"},
+    {k:['price','cost','pricing','budget','how much','rate','affordable','cheap','expensive','npr','charges'],a:"All quotes are fixed before we start — no surprises. Rough idea: websites from NPR 25k, SEO from 8k/month, software from 40k. Exact quote is free on a 10-minute call. Want to set one up?"},
+    {k:['website','web design','landing page','online store','ecommerce','business site','company website'],a:"We build websites from NPR 25k — most go live in 1–3 weeks. Are you thinking a basic business site, an online store, or something with bookings?"},
+    {k:['free','no cost','cost anything','charge anything'],a:"First consultation is completely free — Subarna gives you a real quote on the spot, zero commitment. Want to set that up?"},
+    {k:['how long','timeline','deadline','how soon','days to complete','how many weeks','urgent','asap','fast delivery','when will it be ready'],a:"Websites usually go live in 1–3 weeks. We agree on a deadline for every project upfront — on time or we fix it at our cost. What's your target date?"},
+    {k:['what services','services you offer','what do you offer','what can you do','what you do','help me with','can you help','do you provide'],a:"We do websites, custom software, SEO, ads, automation, hosting, and a full hotel package. What's the main thing you're trying to fix or grow?"},
+    {k:['my business','i sell','i have a business','business is','i run a','i own a','shop','store','restaurant','cafe','clinic','salon','pharmacy','farm','school','factory','dairy','bakery','grocery','meat','fish','clothing','hardware','electronics','furniture','beauty','spa','gym','travel agency','ngo','hospital','college','coaching','startup'],a:"Nice! So for your business, what's the most important thing right now — getting more customers online, a website, automating something, or something else?"},
+    {k:['contact','reach you','whatsapp number','email address','your phone','how to contact','your number'],a:"Easiest is WhatsApp +977 9703901454 — Subarna answers directly. Or email hello@apexion.com.np. We get back within 24 hours."},
+    {k:['book a call','book appointment','schedule a call','meeting','call me back','set up a call'],a:"A free 10-minute call with Subarna and you get a real fixed quote on the spot. Want me to take your number or just WhatsApp +977 9703901454?"}
   ];
   function offline(t){
     t=(t||'').toLowerCase();
     for(var i=0;i<KB.length;i++){
       for(var j=0;j<KB[i].k.length;j++){
         var kw=KB[i].k[j].replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-        if(new RegExp('(?:^|\\s|[^a-z])'+kw+'(?:\\s|[^a-z]|$)').test(t))return KB[i].a;
+        if(new RegExp('(?:^|[^a-z])'+kw).test(t))return KB[i].a;
       }
     }
     return "Haha not sure I caught that! What does your business do? I can suggest what might actually help.";}
