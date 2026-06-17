@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 1080px; overflow: hidden; background: #0f172a; font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+.wrap {
+  width: 1080px;
+  height: 1080px;
+  background: #0f172a;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.bg-circle {
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: #2563eb;
+  opacity: 0.06;
+  pointer-events: none;
+}
+.bg-circle-2 {
+  position: absolute;
+  bottom: -120px; left: -60px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: #2563eb;
+  opacity: 0.04;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 2;
+}
+h1 span { color: #2563eb; }
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.item:last-child { border-bottom: none; }
+.num {
+  font-size: 13px;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: 0.08em;
+  min-width: 32px;
+  padding-top: 4px;
+}
+.item-text h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.item-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.65;
+  max-width: 56ch;
+}
+.footer {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.logo-row { display: flex; align-items: center; gap: 12px; }
+.logo-mark {
+  width: 38px; height: 38px;
+  background: #1e293b;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.logo-mark svg { width: 22px; height: 22px; }
+.logo-text { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.03em; }
+.url { font-size: 14px; color: #2563eb; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bg-circle"></div>
+  <div class="bg-circle-2"></div>
+
+  <div class="eyebrow">Why businesses choose us</div>
+  <h1>Honest work.<br><span>Fixed prices.</span><br>No lock-in.</h1>
+
+  <div class="items">
+    <div class="item">
+      <span class="num">01</span>
+      <div class="item-text">
+        <h3>Fixed quote before we start</h3>
+        <p>You get a written price before any work begins. No surprises, no hidden costs mid-project.</p>
+      </div>
+    </div>
+    <div class="item">
+      <span class="num">02</span>
+      <div class="item-text">
+        <h3>You own everything</h3>
+        <p>All code, domains, and content belong to you. Walk away anytime with everything intact.</p>
+      </div>
+    </div>
+    <div class="item">
+      <span class="num">03</span>
+      <div class="item-text">
+        <h3>Direct WhatsApp support</h3>
+        <p>Talk to the person building your product, not a support ticket queue.</p>
+      </div>
+    </div>
+    <div class="item">
+      <span class="num">04</span>
+      <div class="item-text">
+        <h3>Built for Nepal</h3>
+        <p>eSewa, Khalti, Fonepay integrations. Nepali date support. We know how business works here.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="logo-row">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 19h4l4-9 4 9h4L12 3Z" fill="#fff"/></svg>
+      </div>
+      <span class="logo-text">Apexion Technologies</span>
+    </div>
+    <span class="url">apexionlabs.tech</span>
+  </div>
+</div>
+</body>
+</html>

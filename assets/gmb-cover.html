@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 608px; overflow: hidden; background: #0f172a; font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+.wrap {
+  width: 1080px;
+  height: 608px;
+  background: #0f172a;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 96px;
+  overflow: hidden;
+}
+.bg-circle-1 {
+  position: absolute;
+  top: -120px; right: -80px;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  background: #2563eb;
+  opacity: 0.08;
+}
+.bg-circle-2 {
+  position: absolute;
+  bottom: -160px; left: 40px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: #2563eb;
+  opacity: 0.05;
+}
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.content {
+  position: relative;
+  z-index: 2;
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+.logo-mark {
+  width: 52px; height: 52px;
+  background: #1e293b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.logo-mark svg { width: 28px; height: 28px; }
+.logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+.logo-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+}
+h1 span { color: #2563eb; }
+.sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+}
+.pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pill {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(37,99,235,0.35);
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: rgba(37,99,235,0.08);
+}
+.right-block {
+  position: absolute;
+  right: 96px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  text-align: right;
+}
+.location {
+  font-size: 14px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.url {
+  font-size: 16px;
+  color: #2563eb;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 3px;
+  margin-bottom: 28px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bg-circle-1"></div>
+  <div class="bg-circle-2"></div>
+  <div class="grid-lines"></div>
+
+  <div class="content">
+    <div class="logo-row">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3 4 19h4l4-9 4 9h4L12 3Z" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">Apexion</div>
+        <div class="logo-sub">Technologies</div>
+      </div>
+    </div>
+
+    <div class="accent-line"></div>
+
+    <h1>Build smarter.<br><span>Grow faster.</span></h1>
+    <p class="sub">IT solutions for Nepal businesses · Kathmandu</p>
+
+    <div class="pills">
+      <span class="pill">Web Development</span>
+      <span class="pill">Custom Software</span>
+      <span class="pill">Automation & AI</span>
+      <span class="pill">SEO</span>
+      <span class="pill">Digital Ads</span>
+    </div>
+  </div>
+
+  <div class="right-block">
+    <div class="location">Kathmandu, Nepal</div>
+    <div class="url">apexionlabs.tech</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,48 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://apexiontechnologies.vercel.app/</loc>
+    <loc>https://apexionlabs.tech/</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/services/web-development.html</loc>
+    <loc>https://apexionlabs.tech/services/web-development</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/services/custom-software.html</loc>
+    <loc>https://apexionlabs.tech/services/custom-software</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/services/seo.html</loc>
+    <loc>https://apexionlabs.tech/services/seo</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/services/digital-ads.html</loc>
+    <loc>https://apexionlabs.tech/services/digital-ads</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/services/automation-ai.html</loc>
+    <loc>https://apexionlabs.tech/services/automation-ai</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/services/hosting-support.html</loc>
+    <loc>https://apexionlabs.tech/services/hosting-support</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/services/hotel-solutions.html</loc>
+    <loc>https://apexionlabs.tech/services/hotel-solutions</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://apexiontechnologies.vercel.app/privacy.html</loc>
+    <loc>https://apexionlabs.tech/services/crm-lifecycle</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/privacy</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/facebook-vs-website-nepal</loc>
+    <lastmod>2026-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/seo-for-local-businesses-nepal</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/online-payments-nepal</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/hire-web-developer-nepal</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/digital-marketing-nepal-small-business</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/website-cost-in-nepal</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/google-maps-business-nepal</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/how-to-build-software-nepal</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://apexionlabs.tech/blog/business-automation-nepal</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,0 +1,665 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Plain Advice on Websites, SEO &amp; Going Digital in Nepal | Apexion Technologies</title>
+<meta name="description" content="Practical guides on websites, SEO, software, and going digital. Straight answers, real numbers, no fluff.">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/apexion-icon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<meta name="theme-color" content="#2563eb">
+<link rel="canonical" href="https://apexionlabs.tech/blog">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Apexion Technologies">
+<meta property="og:title" content="Blog | Apexion Technologies">
+<meta property="og:description" content="Practical guides on websites, SEO, software, and going digital. Real numbers, no fluff.">
+<meta property="og:url" content="https://apexionlabs.tech/blog">
+<meta property="og:image" content="https://apexionlabs.tech/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | Apexion Technologies">
+<meta name="twitter:description" content="Practical guides on websites, SEO, and software. Straight answers, no fluff.">
+<meta name="twitter:image" content="https://apexionlabs.tech/assets/og-image.png">
+<meta property="og:locale" content="en_NP">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Apexion Technologies Blog",
+  "url": "https://apexionlabs.tech/blog",
+  "description": "Practical guides on websites, SEO, software, and going digital. Real numbers, straight answers.",
+  "publisher": { "@type": "Organization", "name": "Apexion Technologies", "url": "https://apexionlabs.tech/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://apexionlabs.tech/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://apexionlabs.tech/blog"}
+  ]
+}
+</script>
+<style>
+/* ===== BLOG PAGE REDESIGN ===== */
+.blog-hero {
+  background: var(--ink-deep);
+  padding: 6rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.blog-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -8%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.07;
+  pointer-events: none;
+}
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.04;
+  pointer-events: none;
+}
+.blog-eyebrow-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.4rem;
+}
+.blog-eyebrow-tag::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--amber);
+  border-radius: 2px;
+}
+.blog-hero h1 {
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.0;
+  letter-spacing: -.04em;
+  margin-bottom: 1.6rem;
+}
+.blog-hero h1 span { color: var(--amber); }
+.blog-hero-lead {
+  color: rgba(255,255,255,.5);
+  font-size: 1.08rem;
+  max-width: 480px;
+  line-height: 1.75;
+}
+.blog-hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.blog-stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.blog-stat-label {
+  font-size: .78rem;
+  color: rgba(255,255,255,.35);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-top: .3rem;
+}
+
+/* ===== FILTERS ===== */
+.blog-filters-section {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  position: sticky;
+  top: 65px;
+  z-index: 88;
+}
+.blog-filters {
+  display: flex;
+  gap: .5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.blog-filters::-webkit-scrollbar { display: none; }
+.blog-filter-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1.5px solid var(--line);
+  border-radius: 100px;
+  padding: .42rem 1.2rem;
+  font-family: inherit;
+  font-size: .84rem;
+  font-weight: 700;
+  color: var(--body);
+  cursor: pointer;
+  transition: all .16s;
+  white-space: nowrap;
+}
+.blog-filter-btn:hover { border-color: var(--amber); color: var(--amber); }
+.blog-filter-btn.active { background: var(--amber); border-color: var(--amber); color: #fff; }
+
+/* ===== FEATURED POST ===== */
+.blog-featured-wrap { padding: 3rem 0 0; }
+.blog-featured {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0;
+  background: var(--ink-deep);
+  border-radius: var(--r-xl);
+  padding: 3rem 3.5rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s var(--ease), box-shadow .22s;
+}
+@media (max-width: 640px) {
+  .blog-featured { grid-template-columns: 1fr; padding: 2rem 1.8rem; }
+  .blog-feat-num { display: none; }
+}
+.blog-featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(37,99,235,.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.blog-featured:hover { transform: translateY(-5px); box-shadow: 0 32px 72px rgba(15,23,42,.28); }
+.blog-feat-num {
+  font-size: 7rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.05);
+  letter-spacing: -.06em;
+  line-height: 1;
+  align-self: flex-start;
+  user-select: none;
+  margin-top: -.5rem;
+}
+.blog-feat-inner { position: relative; }
+.blog-feat-tag {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(37,99,235,.18);
+  border-radius: 100px;
+  padding: .28rem .85rem;
+  margin-bottom: 1.1rem;
+}
+.blog-feat-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  margin-bottom: .6rem;
+}
+.blog-feat-title {
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -.03em;
+  margin-bottom: 1rem;
+}
+.blog-feat-desc {
+  color: rgba(255,255,255,.48);
+  font-size: .98rem;
+  line-height: 1.7;
+  max-width: 58ch;
+  margin-bottom: 1.8rem;
+}
+.blog-feat-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.blog-feat-meta-text {
+  font-size: .82rem;
+  color: rgba(255,255,255,.3);
+  font-weight: 600;
+}
+.blog-feat-cta {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--amber);
+  color: #fff;
+  font-size: .86rem;
+  font-weight: 700;
+  padding: .55rem 1.3rem;
+  border-radius: 100px;
+  transition: background .16s, transform .16s;
+}
+.blog-featured:hover .blog-feat-cta { background: var(--amber-600); transform: translateX(2px); }
+
+/* ===== POST GRID ===== */
+.blog-posts-section { padding: 2rem 0 4rem; }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 860px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .blog-grid { grid-template-columns: 1fr; } }
+
+.blog-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 1.7rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s var(--ease), box-shadow .18s, border-color .18s;
+}
+.blog-card:hover { transform: translateY(-5px); box-shadow: var(--sh-2); border-color: var(--amber); }
+.blog-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+.blog-card-tag {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--amber-600);
+  background: var(--amber-50);
+  border-radius: 100px;
+  padding: .25rem .75rem;
+}
+.blog-card-num {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--line);
+  letter-spacing: -.02em;
+}
+.blog-card h3 {
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.28;
+  color: var(--ink);
+  letter-spacing: -.02em;
+  margin-bottom: .65rem;
+}
+.blog-card p {
+  color: var(--body);
+  font-size: .9rem;
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line-2);
+  padding-top: .9rem;
+  margin-top: auto;
+}
+.blog-card-date {
+  font-size: .78rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.blog-card-read {
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--amber);
+  letter-spacing: .01em;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .18s, transform .18s;
+}
+.blog-card:hover .blog-card-read { opacity: 1; transform: translateX(0); }
+
+/* ===== HIDE/SHOW filter ===== */
+.blog-card[data-hidden="true"],
+.blog-featured[data-hidden="true"] { display: none; }
+
+/* ===== CTA BOX ===== */
+.blog-cta-section { padding: 0 0 5rem; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Apexion Technologies home">
+      <img class="logo-mark" src="../assets/logo.png" width="36" height="36" alt="" aria-hidden="true" loading="eager">
+      <div class="logo-words"><span class="logo-text">Apexion</span><span class="logo-sub">Technologies</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">Our Story</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#why">Why Apexion</a></li>
+      <li><a href="/blog" class="active" aria-current="page">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/#contact" class="nav-contact">Contact us</a>
+      <button class="burger" aria-label="Open menu">
+        <svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="blog-hero">
+  <div class="wrap wide">
+    <div class="blog-eyebrow-tag">The Blog</div>
+    <h1>Plain talk.<br><span>Real advice.</span></h1>
+    <p class="blog-hero-lead">Practical guides on websites, SEO, digital marketing, and going online. Written for business owners who want straight answers.</p>
+    <div class="blog-hero-stats">
+      <div>
+        <div class="blog-stat-num">9</div>
+        <div class="blog-stat-label">Guides published</div>
+      </div>
+      <div>
+        <div class="blog-stat-num">7</div>
+        <div class="blog-stat-label">Topics covered</div>
+      </div>
+      <div>
+        <div class="blog-stat-num">Free</div>
+        <div class="blog-stat-label">Always free to read</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== CATEGORY FILTERS ===== -->
+<div class="blog-filters-section">
+  <div class="wrap">
+    <div class="blog-filters" id="blog-filters" role="group" aria-label="Filter by category">
+      <button class="blog-filter-btn active" data-cat="all">All</button>
+      <button class="blog-filter-btn" data-cat="Websites">Websites</button>
+      <button class="blog-filter-btn" data-cat="SEO">SEO</button>
+      <button class="blog-filter-btn" data-cat="Local SEO">Local SEO</button>
+      <button class="blog-filter-btn" data-cat="Marketing">Marketing</button>
+      <button class="blog-filter-btn" data-cat="Payments">Payments</button>
+      <button class="blog-filter-btn" data-cat="Strategy">Strategy</button>
+      <button class="blog-filter-btn" data-cat="Software">Software</button>
+      <button class="blog-filter-btn" data-cat="Automation">Automation</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FEATURED POST ===== -->
+<div class="blog-featured-wrap">
+  <div class="wrap">
+    <a class="blog-featured reveal" href="/blog/website-cost-in-nepal" data-cat="Websites">
+      <div class="blog-feat-num">01</div>
+      <div class="blog-feat-inner">
+        <div class="blog-feat-label">Featured guide</div>
+        <span class="blog-feat-tag">Websites</span>
+        <h2 class="blog-feat-title">How much does a website cost in Nepal? An honest guide for 2026</h2>
+        <p class="blog-feat-desc">Quotes in Nepal range from NPR 10,000 to several lakhs for what sounds like the same thing. Here is what actually decides the price, what the running costs look like, and the questions to ask before you pay anyone.</p>
+        <div class="blog-feat-footer">
+          <span class="blog-feat-meta-text">June 13, 2026 &nbsp;·&nbsp; 7 min read</span>
+          <span class="blog-feat-cta">Read guide &nbsp;→</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ===== POST GRID ===== -->
+<section class="blog-posts-section">
+  <div class="wrap">
+    <div class="blog-grid" id="blog-grid">
+
+      <a class="blog-card reveal" href="/blog/google-maps-business-nepal" data-cat="Local SEO">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">Local SEO</span>
+          <span class="blog-card-num">02</span>
+        </div>
+        <h3>How to get your business on Google Maps in Nepal, step by step</h3>
+        <p>When someone searches "cafe near me" or "hardware shop in Baneshwor", Google Maps decides who they find. Setting up your listing is free and this guide walks you through the whole process.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">June 13, 2026 &nbsp;·&nbsp; 8 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+      <a class="blog-card reveal" href="/blog/digital-marketing-nepal-small-business" data-cat="Marketing">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">Marketing</span>
+          <span class="blog-card-num">03</span>
+        </div>
+        <h3>Digital marketing for small businesses in Nepal: where to start in 2026</h3>
+        <p>Facebook ads, Google, WhatsApp, SEO: every expert says something different. This guide cuts through it and tells you exactly where to start based on your stage and budget.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">May 15, 2026 &nbsp;·&nbsp; 7 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+      <a class="blog-card reveal" href="/blog/hire-web-developer-nepal" data-cat="Websites">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">Websites</span>
+          <span class="blog-card-num">04</span>
+        </div>
+        <h3>How to hire a web developer in Nepal: green flags and red flags</h3>
+        <p>Nepal has thousands of web developers and the price range is enormous. Before you pay anyone, read this guide on what to look for, what to avoid, and the five questions that protect your money.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">April 22, 2026 &nbsp;·&nbsp; 8 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+      <a class="blog-card reveal" href="/blog/online-payments-nepal" data-cat="Payments">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">Payments</span>
+          <span class="blog-card-num">05</span>
+        </div>
+        <h3>eSewa, Khalti and Fonepay: the complete guide to online payments in Nepal</h3>
+        <p>Stripe and PayPal do not work for Nepal businesses. eSewa, Khalti, and Fonepay do. Here is how each one works, what the fees are, and how to add them to your website.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">March 12, 2026 &nbsp;·&nbsp; 7 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+      <a class="blog-card reveal" href="/blog/seo-for-local-businesses-nepal" data-cat="SEO">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">SEO</span>
+          <span class="blog-card-num">06</span>
+        </div>
+        <h3>How to rank on Google in Nepal: a practical guide for local businesses</h3>
+        <p>Local SEO is not as complicated as it sounds. This guide walks through every step: Google Business Profile, website basics, content that ranks, and the mistakes that hold Nepali businesses back.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">February 18, 2026 &nbsp;·&nbsp; 9 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+      <a class="blog-card reveal" href="/blog/facebook-vs-website-nepal" data-cat="Strategy">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">Strategy</span>
+          <span class="blog-card-num">07</span>
+        </div>
+        <h3>Why your Nepali business needs a website, not just a Facebook page</h3>
+        <p>A Facebook page is free and easy, but it cannot show you on Google and you do not own it. Here is an honest comparison to help you decide where to invest first.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">January 28, 2026 &nbsp;·&nbsp; 7 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+      <a class="blog-card reveal" href="/blog/how-to-build-software-nepal" data-cat="Software">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">Software</span>
+          <span class="blog-card-num">08</span>
+        </div>
+        <h3>How to build software for your business in Nepal: a complete guide for 2026</h3>
+        <p>What custom software costs in Nepal, how long it takes, how to find the right developer, and the step-by-step process from idea to a working system your team can use.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">June 5, 2026 &nbsp;·&nbsp; 10 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+      <a class="blog-card reveal" href="/blog/business-automation-nepal" data-cat="Automation">
+        <div class="blog-card-top">
+          <span class="blog-card-tag">Automation</span>
+          <span class="blog-card-num">09</span>
+        </div>
+        <h3>Business automation in Nepal: save 20+ hours a week and grow without hiring</h3>
+        <p>WhatsApp bots, auto-invoicing, inventory alerts, daily reports. Real Nepal automation examples with costs in NPR and a simple formula to know if it pays off for you.</p>
+        <div class="blog-card-footer">
+          <span class="blog-card-date">May 28, 2026 &nbsp;·&nbsp; 9 min</span>
+          <span class="blog-card-read">Read →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="blog-cta-section">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>Have a question these guides didn't answer?</h2>
+      <p>Send it over on WhatsApp. We reply within 24 hours, and asking costs nothing.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/9779703901454" class="btn btn-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+          Ask on WhatsApp
+        </a>
+        <a href="/#contact" class="btn btn-ghost">Contact form</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo">
+          <img class="logo-mark" src="../assets/logo.png" width="36" height="36" alt="" aria-hidden="true" loading="eager">
+          <div class="logo-words"><span class="logo-text">Apexion</span><span class="logo-sub">Technologies</span></div>
+        </a>
+        <p>An IT solutions studio based in Kathmandu. We build websites, software, and automation for businesses anywhere that want to grow fast and own what they build.</p>
+        <div class="socials" aria-label="Apexion on social media">
+          <a href="#" aria-label="Facebook (coming soon)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="Instagram (coming soon)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
+          <a href="#" aria-label="X (coming soon)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3H21l-7.2 8.3L22 21h-6.6l-5-6.1L4.6 21H1l7.7-8.9L1.5 3h6.8l4.5 5.6L17.5 3zm-1.2 16h1.9L7.8 5h-2L16.3 19z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Services</h5><a href="/services/web-development">Web Development</a><a href="/services/custom-software">Custom Software</a><a href="/services/seo">SEO &amp; Google Business</a><a href="/services/digital-ads">Digital Ads</a><a href="/services/automation-ai">Automation &amp; AI</a><a href="/services/hosting-support">Cloud, Hosting &amp; Support</a><a href="/services/hotel-solutions">Hotel Solutions</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="/#about">Our Story</a><a href="/#why">Why Apexion</a><a href="/#industries">Industries</a><a href="/blog">Blog</a><a href="/#faq">FAQ</a><a href="/#contact">Contact</a></div>
+      <div class="foot-col"><h5>Get in touch</h5><a href="tel:+9779703901454">+977 9703901454</a><a href="https://wa.me/9779703901454">WhatsApp</a><a href="mailto:contact@apexionlabs.tech">contact@apexionlabs.tech</a><a href="/#contact">Kathmandu, Nepal</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Apexion Technologies</span><span class="foot-legal"><a href="/privacy">Privacy Policy</a><span>Built fast. Built reliable. Built in Nepal.</span></span></div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a class="wa-float" href="https://wa.me/9779703901454?text=Hello%2C%20I%20have%20a%20question%20about%20my%20business%20website." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.9 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.94L.07 24l6.32-1.65a11.9 11.9 0 0 0 5.66 1.44h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+</a>
+
+<!-- ===== CHATBOT ===== -->
+<button id="chat-btn" aria-label="Open chat">
+  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+  <span class="badge"></span>
+</button>
+<div id="chat-window" role="dialog" aria-label="Apexion chat support">
+  <div class="ch-head">
+    <div class="info"><div class="ch-av">A</div><div><b>Apexion Assistant</b><div class="stat"><span class="ch-dot"></span> Online now</div></div></div>
+    <button class="ch-x" id="ch-close" aria-label="Close chat"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="ch-msgs" id="ch-msgs"></div>
+  <div class="ch-chips" id="ch-chips">
+    <button class="ch-chip" data-msg="What services do you offer?">Services</button>
+    <button class="ch-chip" data-msg="How much does a website cost?">Pricing</button>
+    <button class="ch-chip" data-msg="I want to book a consultation">Book a call</button>
+  </div>
+  <div class="ch-input">
+    <input type="text" id="ch-text" placeholder="Type your message…" autocomplete="off" aria-label="Message">
+    <button class="ch-send" id="ch-send" aria-label="Send"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </div>
+</div>
+
+<script src="../app.js"></script>
+<script>
+// Category filter logic
+(function() {
+  var btns = document.querySelectorAll('.blog-filter-btn');
+  var featured = document.querySelector('.blog-featured');
+  var cards = document.querySelectorAll('.blog-card');
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = this.dataset.cat;
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      if (cat === 'all') {
+        featured && featured.removeAttribute('data-hidden');
+        cards.forEach(function(c) { c.removeAttribute('data-hidden'); });
+      } else {
+        featured && (featured.dataset.cat === cat
+          ? featured.removeAttribute('data-hidden')
+          : featured.setAttribute('data-hidden', 'true'));
+        cards.forEach(function(c) {
+          c.dataset.cat === cat
+            ? c.removeAttribute('data-hidden')
+            : c.setAttribute('data-hidden', 'true');
+        });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

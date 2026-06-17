@@ -13,7 +13,7 @@
   --line:      #e8ebef;
   --line-2:    #f0f2f5;
 
-  /* "blue" accent (deep blue) — kept under amber-* names */
+  /* blue accent — kept under amber-* names */
   --amber:     #2563eb;
   --amber-600: #1d4ed8;
   --amber-50:  #dbeafe;
@@ -141,9 +141,8 @@ section.block { padding: 6rem 0; }
 .svc-link svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .svc:hover .svc-link { opacity: 1; transform: none; }
 @media (hover: none) { .svc-link { opacity: 1; transform: none; } }
-.svc-cta { grid-column: span 2; }
+.svc-cta { grid-column: span 1; }
 .svc-cta .svc-link { opacity: 1; transform: none; }
-@media (max-width:680px) { .svc-cta { grid-column: span 1; } }
 
 /* ===== WHY (tabs) ===== */
 .why-tabs { display: flex; justify-content: center; gap: .5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
@@ -593,3 +592,39 @@ footer { background: var(--ink-deep); color: rgba(255,255,255,.55); padding: 4.5
   .modal-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 440px) { #chat-window { width: calc(100vw - 2rem); right: 1rem; } }
+
+
+/* ===== WHATSAPP FLOAT ===== */
+.wa-float { position: fixed; bottom: 5.9rem; right: 1.6rem; z-index: 58; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 12px 28px rgba(37,211,102,.32); transition: transform .18s var(--ease); }
+.wa-float:hover { transform: scale(1.06); }
+.wa-float svg { width: 30px; height: 30px; fill: #fff; }
+@media (prefers-reduced-motion: reduce) { .wa-float, .wa-float:hover { transition: none; transform: none; } }
+
+/* ===== BLOG ===== */
+.post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; max-width: 980px; margin: 0 auto; }
+@media (max-width: 720px) { .post-grid { grid-template-columns: 1fr; } }
+.post-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 2rem 2rem 1.8rem; text-decoration: none; transition: transform .18s var(--ease), box-shadow .18s var(--ease); }
+.post-card:hover { transform: translateY(-4px); box-shadow: var(--sh-2); }
+.post-card .post-tag { display: inline-block; align-self: flex-start; font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--amber-600); background: var(--amber-50); border-radius: 100px; padding: .28rem .8rem; margin-bottom: 1.1rem; }
+.post-card h3 { font-size: 1.3rem; line-height: 1.3; color: var(--ink); margin-bottom: .6rem; }
+.post-card p { color: var(--body); font-size: .98rem; line-height: 1.65; margin-bottom: 1.2rem; }
+.post-card .post-meta { margin-top: auto; font-size: .85rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; }
+.post-card .post-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
+
+.doc .post-meta { display: flex; align-items: center; gap: .55rem; font-size: .9rem; color: var(--muted); margin-bottom: 2.4rem; }
+.doc .post-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
+.doc h3 { font-size: 1.12rem; margin: 1.8rem 0 .6rem; }
+.doc table { width: 100%; border-collapse: collapse; margin: 1.2rem 0 1.6rem; font-size: .98rem; }
+.doc table th { text-align: left; font-weight: 700; color: var(--ink); background: var(--bg-soft, #f6f8fa); }
+.doc table th, .doc table td { border: 1px solid var(--line); padding: .75rem .9rem; color: var(--body); }
+.doc table td b { color: var(--ink); }
+@media (max-width: 560px) { .doc table { font-size: .88rem; } .doc table th, .doc table td { padding: .55rem .6rem; } }
+.doc .note { background: var(--amber-50); border-left: 3px solid var(--amber); border-radius: 0 var(--r-md) var(--r-md) 0; padding: 1rem 1.2rem; margin: 1.4rem 0; }
+.doc .note p { margin: 0; }
+.post-cta { background: var(--ink-deep); border: 1px solid var(--ink-deep); border-radius: var(--r-lg); padding: 1.8rem 2rem; margin-top: 2.8rem; }
+.post-cta h2 { color: #fff !important; }
+.post-cta p { color: rgba(255,255,255,.6); }
+.post-cta h2 { margin-top: 0 !important; }
+.post-cta .btn { margin-top: .4rem; }
+.post-cta .btn-amber { background: #fff; color: var(--ink-deep); box-shadow: none; }
+.post-cta .btn-amber:hover { background: var(--amber-50); color: var(--amber-600); transform: translateY(-2px); }

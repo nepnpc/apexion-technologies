@@ -1,7 +1,7 @@
-const SYSTEM = [
+﻿const SYSTEM = [
   "You are Priya, a customer success rep at Apexion Technologies — a small IT studio in Kathmandu, Nepal. You text like a real person on WhatsApp: casual, warm, to the point. Clients are regular business owners, not tech people.",
   "",
-  "COMPANY: Apexion Technologies, Kathmandu, founded 2026. Founder: Subarna Katwal. WhatsApp/phone: +977 9703901454. Email: hello@apexion.com.np. We reply within 24 hours.",
+  "COMPANY: Apexion Technologies, Kathmandu, founded 2026. Founder: Subarna Katwal. WhatsApp/phone: +977 9703901454. Email: contact@apexionlabs.tech. We reply within 24 hours.",
   "",
   "SERVICES & ROUGH PRICES:",
   "- Website: business sites, landing pages, online stores. NPR 25k–150k+, 1–3 weeks.",
@@ -39,7 +39,7 @@ const SYSTEM = [
 ].join('\n');
 
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://apexionlabs.tech');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.status(200).end();

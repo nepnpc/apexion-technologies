@@ -1,4 +1,4 @@
-# Apexion Technologies — Website Project Guide
+﻿# Apexion Technologies — Website Project Guide
 
 IT solutions studio in Kathmandu, Nepal (new company, founded 2026). Founder: **Subarna Katwal**.
 This file is the source of truth for design + content decisions. Read it before editing or adding pages.
@@ -27,10 +27,10 @@ Modeled on **bajratechnologies.com** (user loves it): clean white, simple, no fl
 ### Colors (CSS vars in `:root`)
 - Background: white `#ffffff`; soft section bg `#f6f8fa`.
 - Headings ink `#141c26`; body `#4a5663`; muted `#8b95a1`; lines `#e8ebef`.
-- **Accent = deep teal-GREEN** `--amber: #0f766e`, hover `--amber-600: #0b5c55`, tint `--amber-50: #e8f3f1`.
-  - NOTE: the accent CSS vars are historically named `--amber-*` but hold GREEN values. Don't rename without care; just keep them green.
-- Dark sections / footer / CTA / quote band: `--ink-deep: #0c1b18`.
-- ⛔ **NO amber/orange/yellow anywhere.** User strongly dislikes it. Accent is green only.
+- **Accent = BLUE** `--amber: #2563eb`, hover `--amber-600: #1d4ed8`, tint `--amber-50: #dbeafe`. Soft bg `--bg-soft: #eff6ff`.
+  - NOTE: the accent CSS vars are named `--amber-*` but hold BLUE values. ⛔ Do NOT change to green — user explicitly chose blue and switched away from green.
+- Dark sections / footer / CTA / quote band: `--ink-deep: #0f172a`.
+- ⛔ **NO green accent, no amber/orange/yellow anywhere.**
 
 ### Typography
 - **Manrope** (Google Fonts) for everything. Headings 700–800, tight letter-spacing (`-.02em`). No serif (Georgia only used for the big decorative quote-mark glyph).
@@ -86,7 +86,7 @@ DISLIKES / REJECTED (do NOT bring back):
 - Honest for a new company: no invented metrics, clients, reviews, or capabilities. Use written guarantees instead (fixed quotes, on-time-or-we-fix, you own everything, real WhatsApp support).
 - Services (4 outcome areas → 6 service cards): Web Development, Custom Software, SEO & Google Business, Digital Ads, Automation & AI, Cloud/Hosting/Support. Also Hotel Solutions package.
 - Pricing ranges (NPR, "fixed quote after a call"): websites 25k–150k+, SEO 8k–25k/mo, automation 15k–50k, AI chatbots 20k–60k, hotel 30k–100k+.
-- Contact: WhatsApp wa.me/977, hello@apexion.com.np, Kathmandu. Reply within 24h.
+- Contact: WhatsApp wa.me/977, contact@apexionlabs.tech, Kathmandu. Reply within 24h.
 - Nepal payments: only eSewa/Khalti/Fonepay work for receiving (no Stripe/PayPal payout to Nepal).
 
 ---
@@ -102,14 +102,20 @@ DISLIKES / REJECTED (do NOT bring back):
 - ✅ DONE — **Services subpages** built (6, one per homepage service card): `services/web-development.html`, `custom-software.html`, `seo.html`, `digital-ads.html`, `automation-ai.html`, `hosting-support.html`. Each has: breadcrumb, subhero (problem→solution + framed icon art), "what's included" (6 cards), 4-step process, fixed-price pricing card, FAQ accordion, CTA, footer, chatbot. Homepage service cards + footer "Services" column now link to these (with a hover "Learn more →" affordance on each card). Optional future page: `hotel-solutions.html` (hotel package, not a homepage card yet).
 - ✅ DONE — Shared CSS extracted to `styles.css` and shared JS to `app.js` (nav-scroll, scroll-reveal, FAQ accordion, mobile burger, chatbot). Every page links both. `index.html` keeps only its page-specific inline JS (hero rotation + why tabs). **When editing design tokens/components, edit `styles.css` once — it applies everywhere.**
 - Groq proxy before launch (chatbot key still client-side, currently empty/offline).
-- **Before launch, replace placeholder domain `https://apexion.com.np`** in canonical + Open Graph + Twitter + JSON-LD tags (every page `<head>`) and the OG image URL with the real domain (OG needs absolute URLs).
+- ✅ DONE (2026-06-12) — **Real domain live: `https://apexionlabs.tech`.** All canonical/OG/Twitter/JSON-LD/sitemap/robots/llms.txt URLs swapped from `apexiontechnologies.vercel.app`. DNS chain: registrar get.tech → Cloudflare DNS (zone in subwrn@gmail.com account; records MUST stay DNS-only/grey-cloud, proxy breaks Vercel) → Vercel (apex + www 308→apex, SSL auto).
 - **Social links are placeholders (`href="#"`)** in every footer `.socials` (Facebook, Instagram, LinkedIn, X). Swap in real URLs when pages exist.
 - **Registration number + PAN are placeholders `XXXXXXXX` / `XXXXXXXXX`.** Appear in (a) every footer copyright line (`.foot-bottom`, all 8 pages) and (b) the homepage FAQ "Are you a registered company?" answer. Replace with the real Company Reg. No. and PAN once registration is complete. ⚠ If the company is NOT yet registered at launch, remove these / change wording to "registration in progress" — do not display fake numbers.
 - Optional: add `sitemap.xml` + `robots.txt` and a custom 404 page.
 
+## ✅ Blog + WhatsApp float (2026-06-13)
+- **Blog** at `blog/`: `index.html` (listing, post-card grid) + 2 posts: `website-cost-in-nepal.html`, `google-maps-business-nepal.html`. Posts use `.doc/.doc-inner` layout + new styles in `styles.css` (`.post-grid`, `.post-card`, `.doc table`, `.doc .note`, `.post-cta`). Each post: BlogPosting + BreadcrumbList JSON-LD, canonical/OG, June 13 2026 dates. In sitemap + llms.txt. "Blog" added to nav (after Industries) + footer Company col on ALL pages. Writing style: plain, honest, no em-dashes, concrete NPR figures consistent with service pages. New posts: copy a post file, keep that voice.
+- **WhatsApp float** (`.wa-float`) on every page: fixed green circle above the chatbot button (bottom 5.9rem right 1.6rem, z-58), official WA green #25d366, prefilled wa.me message per page. Reduced-motion gated.
+- Fixed footer mojibake (`Â©` → `©`) in 8 files (double-encoded UTF-8).
+
 ## ⏳ PENDING (before launch)
-- **Set WEB3FORMS_KEY env var in Vercel.** Get free key from web3forms.com (sign up with hello@apexion.com.np) → Vercel dashboard → Project → Settings → Environment Variables → add `WEB3FORMS_KEY`. Until set, `/api/book` works but sends no email (returns success + WhatsApp link only).
-- **Contact form access key.** Homepage `#contact-form` now sends **directly to the inbox via Web3Forms** (AJAX, no redirect, inline success message; `app.js` handles it). Needs a free key: sign up at web3forms.com with hello@apexion.com.np, paste it into `value="YOUR_WEB3FORMS_ACCESS_KEY"` in `index.html`. Until set, the form fails gracefully and shows WhatsApp/email fallback. (Submissions land as email; switch provider or add a backend later if volume grows.)
+- **Fix Gemini chatbot AI (blocked on API key).** Current `GEMINI_KEY` in Vercel (`AQ.Ab8RN6Ik...`) returns `limit: 0` on ALL models — Google Cloud project "apex" has billing enabled, which zeroes free tier quotas. Fix: go to **aistudio.google.com/apikey** → "Create API key in new project" (new project, no billing) → get `AIza...` key → `vercel env rm GEMINI_KEY production` then `vercel env add GEMINI_KEY production` with new key. `api/chat.js` already uses `gemini-1.5-flash` and is deployed. Once key works, run the 33-entry KB hard test suite.
+- **Set WEB3FORMS_KEY env var in Vercel.** Get free key from web3forms.com (sign up with contact@apexionlabs.tech) → Vercel dashboard → Project → Settings → Environment Variables → add `WEB3FORMS_KEY`. Until set, `/api/book` works but sends no email (returns success + WhatsApp link only).
+- **Contact form access key.** Homepage `#contact-form` now sends **directly to the inbox via Web3Forms** (AJAX, no redirect, inline success message; `app.js` handles it). Needs a free key: sign up at web3forms.com with contact@apexionlabs.tech, paste it into `value="YOUR_WEB3FORMS_ACCESS_KEY"` in `index.html`. Until set, the form fails gracefully and shows WhatsApp/email fallback. (Submissions land as email; switch provider or add a backend later if volume grows.)
 - **Real images.** Site currently uses inline SVG illustrations (framed-icon hero art on service pages, abstract bar chart in Why panel) + the real `founder.png`. Replace/augment with real photos: team, office/Kathmandu, sample work/project screenshots, and proper hero imagery. Service-page hero art (`.subhero-art`) and homepage are the main slots. Optimise (WebP, lazy-load) when added.
 
 ## ✅ Visual polish DONE (light color + basic animation)
@@ -119,8 +125,8 @@ DISLIKES / REJECTED (do NOT bring back):
 - All motion gated by `prefers-reduced-motion` (existing global reset + JS `reducedMotion` check). Stays within: green-only, no amber, no AI-slop gradients.
 
 ## 🚀 LAUNCH CHECKLIST (do when domain is live)
-0. **Set up Web3Forms** for the contact form: sign up at web3forms.com with hello@apexion.com.np, get the free access key, paste it into `value="YOUR_WEB3FORMS_ACCESS_KEY"` in `index.html` `#contact-form`. Test a submission lands in inbox. (Form sends direct to inbox, no redirect; fails to WhatsApp/email fallback until key is set.)
-1. Find-replace placeholder domain `https://apexion.com.np` → real domain in all `<head>` canonical/OG/Twitter/JSON-LD + the `og:image` URLs.
+0. **Set up Web3Forms** for the contact form: sign up at web3forms.com with contact@apexionlabs.tech, get the free access key, paste it into `value="YOUR_WEB3FORMS_ACCESS_KEY"` in `index.html` `#contact-form`. Test a submission lands in inbox. (Form sends direct to inbox, no redirect; fails to WhatsApp/email fallback until key is set.)
+1. ✅ DONE (2026-06-12) — domain `https://apexionlabs.tech` live + all URLs swapped (see TODO section for DNS details).
 2. Replace footer + FAQ **Reg. No. `XXXXXXXX`** and **PAN `XXXXXXXXX`** with real numbers (or remove if not yet registered).
 3. Replace 4 social `href="#"` placeholders with real profile URLs.
 4. Replace temp WhatsApp/phone `9703901454` if a permanent number is issued (currently `wa.me/9779703901454`, `tel:+9779703901454`).

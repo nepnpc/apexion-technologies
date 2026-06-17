@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1080px; height: 1080px; overflow: hidden; background: #f8fafc; font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+.wrap {
+  width: 1080px;
+  height: 1080px;
+  background: #f8fafc;
+  padding: 72px;
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  margin-bottom: 52px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  flex: 1;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.icon svg { width: 24px; height: 24px; }
+.card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.card p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.6;
+  flex: 1;
+}
+.footer {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 36px; height: 36px;
+  background: #0f172a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-mark svg { width: 20px; height: 20px; }
+.logo-text { font-size: 16px; font-weight: 800; color: #0f172a; letter-spacing: -0.03em; }
+.url { font-size: 14px; color: #2563eb; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="eyebrow">Apexion Technologies · Kathmandu, Nepal</div>
+    <h1>What we build<br>for your business</h1>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Web Development</h3>
+      <p>Fast, mobile-ready websites that convert visitors into customers. From NPR 25,000.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Custom Software</h3>
+      <p>Management systems, billing tools, booking apps built around how your business works.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <h3>Automation & AI</h3>
+      <p>Automate invoicing, WhatsApp replies, reports. Save 20+ hours a week.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <h3>SEO & Google Business</h3>
+      <p>Rank on Google Nepal for the searches your customers are already making.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <h3>Digital Ads</h3>
+      <p>Facebook and Google ads that bring real inquiries, not just impressions.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>
+      </div>
+      <h3>Cloud Hosting & Support</h3>
+      <p>Managed hosting with fast Nepal-region servers. We handle uptime, you handle business.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="logo-row">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 19h4l4-9 4 9h4L12 3Z" fill="#fff"/></svg>
+      </div>
+      <span class="logo-text">Apexion Technologies</span>
+    </div>
+    <span class="url">apexionlabs.tech</span>
+  </div>
+</div>
+</body>
+</html>

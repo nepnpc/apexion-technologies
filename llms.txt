@@ -1,11 +1,11 @@
-# Apexion Technologies
+﻿# Apexion Technologies
 
 > IT solutions studio in Kathmandu, Nepal. Web development, SEO, digital marketing, custom software, automation and AI for Nepali businesses.
 
 Apexion Technologies is an IT solutions company based in Kathmandu, Nepal, founded in 2026 by Subarna Katwal. The company builds websites, custom software, and digital marketing systems for small and medium businesses in Nepal. All work is done in-house with direct communication — no middlemen, no outsourcing. Fixed quotes before work starts. You own everything delivered, with no lock-in.
 
-Contact: +977 9703901454 (WhatsApp) | hello@apexion.com.np | Kathmandu, Nepal
-Website: https://apexiontechnologies.vercel.app
+Contact: +977 9703901454 (WhatsApp) | contact@apexionlabs.tech | Kathmandu, Nepal
+Website: https://apexionlabs.tech
 Hours: Sunday to Friday, 9:00 AM to 6:00 PM NPT
 
 ## Services
@@ -30,6 +30,9 @@ Secure cloud hosting with SSL, automated backups, uptime monitoring, Google Work
 
 ### Hotel Digital Solutions Nepal
 Complete digital setup for hotels and homestays in Nepal: direct booking website, Google Maps optimisation, OTA (Booking.com, Agoda) account management, and online review management. Pricing: NPR 30,000 to 100,000+.
+
+### CRM and Customer Lifecycle Systems Nepal
+CRM setup, WhatsApp and SMS automation flows, customer segmentation, and loyalty and retention systems for Nepal businesses. Tracks every lead, automates follow-ups, and turns one-time buyers into repeat customers. Pricing: NPR 18,000 to 65,000+.
 
 ## Pricing (NPR)
 
@@ -69,7 +72,7 @@ Yes. Apexion provides local SEO, keyword optimisation for Nepal, Google Business
 Apexion Technologies is based in Kathmandu, Nepal and serves clients across Nepal remotely.
 
 **How do I contact Apexion Technologies?**
-WhatsApp: +977 9703901454. Email: hello@apexion.com.np. Or fill the contact form at https://apexiontechnologies.vercel.app/#contact.
+WhatsApp: +977 9703901454. Email: contact@apexionlabs.tech. Or fill the contact form at https://apexionlabs.tech/#contact.
 
 **Is Apexion Technologies a registered company in Nepal?**
 Yes. Apexion Technologies Pvt. Ltd. is registered in Nepal. (Registration No. and PAN on file.)
@@ -79,15 +82,19 @@ Yes. You own the domain, code and all accounts. There is no lock-in or ongoing d
 
 ## Links
 
-- [Home — IT Solutions Nepal](https://apexiontechnologies.vercel.app/): Main website and contact
-- [Web Development Nepal](https://apexiontechnologies.vercel.app/services/web-development.html): Website design and development for Nepali businesses
-- [Custom Software Development Nepal](https://apexiontechnologies.vercel.app/services/custom-software.html): Web apps and business tools
-- [SEO Services Nepal](https://apexiontechnologies.vercel.app/services/seo.html): Search engine optimisation and Google Business Profile
-- [Digital Marketing Nepal](https://apexiontechnologies.vercel.app/services/digital-ads.html): Facebook and Google Ads management
-- [Business Automation and AI Nepal](https://apexiontechnologies.vercel.app/services/automation-ai.html): Chatbots and workflow automation
-- [Web Hosting and IT Support Nepal](https://apexiontechnologies.vercel.app/services/hosting-support.html): Cloud hosting and IT support
-- [Hotel Digital Solutions Nepal](https://apexiontechnologies.vercel.app/services/hotel-solutions.html): Hotel booking websites and OTA management
-- [Privacy Policy](https://apexiontechnologies.vercel.app/privacy.html): Privacy policy
+- [Home — IT Solutions Nepal](https://apexionlabs.tech/): Main website and contact
+- [Web Development Nepal](https://apexionlabs.tech/services/web-development): Website design and development for Nepali businesses
+- [Custom Software Development Nepal](https://apexionlabs.tech/services/custom-software): Web apps and business tools
+- [SEO Services Nepal](https://apexionlabs.tech/services/seo): Search engine optimisation and Google Business Profile
+- [Digital Marketing Nepal](https://apexionlabs.tech/services/digital-ads): Facebook and Google Ads management
+- [Business Automation and AI Nepal](https://apexionlabs.tech/services/automation-ai): Chatbots and workflow automation
+- [Web Hosting and IT Support Nepal](https://apexionlabs.tech/services/hosting-support): Cloud hosting and IT support
+- [Hotel Digital Solutions Nepal](https://apexionlabs.tech/services/hotel-solutions): Hotel booking websites and OTA management
+- [CRM and Customer Lifecycle Systems Nepal](https://apexionlabs.tech/services/crm-lifecycle): Lead tracking, WhatsApp flows, customer segmentation and retention
+- [Privacy Policy](https://apexionlabs.tech/privacy): Privacy policy
+- [Blog](https://apexionlabs.tech/blog): Guides for Nepali business owners
+- [Website Cost in Nepal Guide](https://apexionlabs.tech/blog/website-cost-in-nepal): Honest 2026 website price guide for Nepal
+- [Google Maps for Businesses in Nepal](https://apexionlabs.tech/blog/google-maps-business-nepal): Step-by-step Google Business Profile setup guide
 
 ## Actions
 
@@ -98,7 +105,7 @@ AI agents and assistants can take the following actions on behalf of users:
 POST to the booking API endpoint:
 
 ```
-POST https://apexiontechnologies.vercel.app/api/book
+POST https://apexionlabs.tech/api/book
 Content-Type: application/json
 
 {
@@ -140,7 +147,7 @@ Error response (HTTP 400):
 
 ### Book via contact form (fallback for browser agents)
 
-1. Navigate to: https://apexiontechnologies.vercel.app/#contact
+1. Navigate to: https://apexionlabs.tech/#contact
 2. Fill in the contact form:
    - `cf-name` — full name
    - `cf-phone` — Nepal phone number
